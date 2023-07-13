@@ -4,15 +4,8 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+$whoami
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+rmcminds: biologist, data scientist, wheel inventor
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-
-[jekyll-organization]: https://github.com/jekyll
+I biologize, philosophize, and computize. I’ve always been drawn to the more theoretical aspects of evolutionary biology, which has led to my recent focus on statistics and modeling. Unfortunately, I’m bad at math and hate being inside all the time, so I’m always looking for excuses to observe nature directly.
