@@ -1,18 +1,4 @@
 <header class="site-header" role="banner">
-
-  <script>
-     var titles = new Array("Mer de Microbes", "Merde! Microbes...");
-
-      function getTitle() {
-        document.getElementById('answerDiv').innerHTML = 
-          titles[Math.floor(Math.random() * titles.length)];
-      }
-  </script>
-
-  <noscript>
-
-  </noscript>
-
   <div class="wrapper">
     {%- assign default_paths = site.pages | map: "path" -%}
     {%- assign page_paths = site.header_pages | default: default_paths -%}
@@ -25,7 +11,6 @@
         merdemicrobes
       </noscript>
     </a>
-
     {%- if page_paths -%}
       <nav class="site-nav">
         <input type="checkbox" id="nav-trigger" class="nav-trigger" />
