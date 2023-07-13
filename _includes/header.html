@@ -1,16 +1,15 @@
+<script type="text/javascript">
+  function getTitle() {
+    var titles = new Array("Mer de Microbes", "Merde! Microbes...");  
+    document.getElementById("randomTitle").innerHTML=titles[Math.floor(Math.random() * titles.length)];
+  }
+  window.onload = getTitle;
+</script>
 <header class="site-header" role="banner">
   <div class="wrapper">
     {%- assign default_paths = site.pages | map: "path" -%}
     {%- assign page_paths = site.header_pages | default: default_paths -%}
-    <a class="site-title" rel="author" href="{{ "/" | relative_url }}">
-      <script type="text/javascript">
-        var titles = new Array("Mer de Microbes", "Merde! Microbes...");  
-        document.write(titles[Math.floor(Math.random() * titles.length)]);
-      </script>
-      <noscript>
-        merdemicrobes
-      </noscript>
-    </a>
+    <a id="randomTitle" class="site-title" rel="author" href="{{ "/" | relative_url }}">merdemicrobes</a>
     {%- if page_paths -%}
       <nav class="site-nav">
         <input type="checkbox" id="nav-trigger" class="nav-trigger" />
