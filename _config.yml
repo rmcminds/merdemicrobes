@@ -20,12 +20,11 @@
 
 title: merdemicrobes
 author: Ryan McMinds
-email: r.mcminds@thecnidaegritty.com
+email: r.mcminds@merdemicrobes.org
 description: >- # this means to ignore newlines until "baseurl:"
   A celebration of both ups and downs as I explore microbial ecology and more
-baseurl: "/merdemicrobes" # the subpath of your site, e.g. /blog
-url: "https://rmcminds.github.io"
-github_username:  rmcminds
+url: "https://merdemicrobes.org"
+github_username: rmcminds
 disqus:
   shortname: merdemicrobes
 
