@@ -4,15 +4,7 @@ title: "iNatle"
 permalink: /iNatle/
 ---
 
-<div id="inatle"></div>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script>
-$( "#inatle" ).load( "https://rmcminds.shinyapps.io/inatle/" );
-</script>
-
-<noscript>
-  iNatle requires javascript
-</noscript>
+<iframe src="https://rmcminds.shinyapps.io/inatle/" onload="this.insertAdjacentHTML('afterend', (this.contentDocument).innerHTML);this.remove()"></iframe>
 
 <br>
 
