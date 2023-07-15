@@ -27,7 +27,7 @@ layout: home
       <div class="inat-widget-header">
         <a href="https://www.inaturalist.org"><img alt="iNaturalist" src="https://www.inaturalist.org/assets/logo-small.png" /></a>  
       </div>
-    <script type="text/javascript" charset="utf-8" src="https://www.inaturalist.org/observations/rmcminds.widget?layout=large&amp;limit=20&amp;order=desc&amp;order_by=created_at"></script>
+    <script type="text/javascript" charset="utf-8" src="https://www.inaturalist.org/observations/rmcminds.widget?layout=small&amp;limit=20&amp;order=desc&amp;order_by=created_at"></script>
     <table class="inat-footer">
       <tr class="inat-user">
           <td class="inat-user-image">
