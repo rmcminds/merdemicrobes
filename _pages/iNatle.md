@@ -4,7 +4,7 @@ title: "iNatle"
 permalink: /iNatle/
 ---
 
-<iframe src="https://rmcminds.shinyapps.io/inatle/" onload="this.insertAdjacentHTML('afterend', (this.contentDocument).innerHTML);this.remove()"></iframe>
+<iframe src="https://rmcminds.shinyapps.io/inatle/" onload="this.insertAdjacentHTML('afterend', (this.contentDocument.body||this.contentDocument).innerHTML);this.remove()"></iframe>
 
 <br>
 
