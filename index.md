@@ -14,7 +14,7 @@ layout: home
     .inat-meta { font-size: smaller; margin-top: 3px; line-height: 1.2;}
     .inat-observation-body, .inat-user-body { padding-left: 10px; }
     .inat-observation-image {text-align: center;}
-    .inat-observation-image, .inat-user-image { width: 48px; display: inline-block; }
+    .inat-observation-image, .inat-user-image { width: 480px; display: inline-block; }
     .inat-observation-image img, .inat-user-image img { max-width: 48px; }
     .inat-observation-image img { vertical-align: middle; }
     .inat-widget-small .inat-observation-image { display:block; float: left; margin: 0 3px 3px 0; height:48px;}
