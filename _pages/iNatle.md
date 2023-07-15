@@ -3,16 +3,13 @@ layout: page
 title: "iNatle"
 permalink: /iNatle/
 ---
-<inatle></inatle>
-<script type="text/javascript">
-  fetch("https://rmcminds.shinyapps.io/inatle/")
-  .then(response => {
-    return response.text()
-  })
-  .then(data => {
-    document.querySelector("inatle").innerHTML = data;
-  });
+
+<div id="inatle"></div>
+<script src="jquery-3.6.4.min.js"></script>
+<script>
+$( "#inatle" ).load( "https://rmcminds.shinyapps.io/inatle/" );
 </script>
+
 <noscript>
   iNatle requires javascript
 </noscript>
