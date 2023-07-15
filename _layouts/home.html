@@ -24,25 +24,25 @@ layout: default
         {%- if site.show_excerpts -%}
           {{ post.excerpt }}
         {%- endif -%}
-        <hr style="color: #C0C0C0">
+        <hr style="border: 1px solid #828282">
       </li>
       {%- endfor -%}
     </ul>
     <p class="rss-subscribe">Subscribe to blog updates <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
   {%- endif -%}
 
-  <hr style="color: #C0C0C0">
+  <hr style="border: 1px solid #828282">
 
   <div id="twitter" style="padding-top:30px;padding-bottom:30px">
     <a class="twitter-timeline" href="https://twitter.com/merdemicrobes?ref_src=twsrc%5Etfw">Tweets by merdemicrobes</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   </div>
 
-  <hr style="color: #C0C0C0">
+  <hr style="border: 1px solid #828282">
   
   <div id="inat" style="padding-top:30px">
     <style type="text/css" media="screen">
       .inat-widget { font-family: Georgia, serif; padding: 10px; line-height: 1}
-      .inat-widget-header {margin-bottom: 10px;}
+      .inat-widget-header {margin-bottom: 10px; padding-bottom: 30px}
       .inat-widget td {vertical-align: top; padding-bottom: 10px;}
       .inat-label { color: #888; }
       .inat-meta { font-size: smaller; margin-top: 3px; line-height: 1.2;}
@@ -62,7 +62,9 @@ layout: default
           <a href="https://www.inaturalist.org"><img alt="iNaturalist" src="https://www.inaturalist.org/assets/logo-small.png" /></a>  
         </div>
       <script type="text/javascript" charset="utf-8" src="https://www.inaturalist.org/observations/rmcminds.widget?layout=small&amp;limit=24&amp;order=desc&amp;order_by=created_at"></script>
-      <strong><a href="https://www.inaturalist.org/observations/rmcminds">View Ryan's observations &raquo;</a></strong>
+      <div style="padding-top: 30px">
+        <strong><a href="https://www.inaturalist.org/observations/rmcminds">View Ryan's observations &raquo;</a></strong>
+      </div>
     </div>
   </div>
 
