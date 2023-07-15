@@ -10,7 +10,7 @@ layout: default
   {{ content }}
 
   {%- if site.posts.size > 0 -%}
-    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
+    <h2 class="post-list-heading">{{ page.list_title | default: "Blog Posts" }}</h2>
     <ul class="post-list">
       {%- for post in site.posts -%}
       <li>
@@ -24,15 +24,22 @@ layout: default
         {%- if site.show_excerpts -%}
           {{ post.excerpt }}
         {%- endif -%}
+        <hr>
       </li>
       {%- endfor -%}
     </ul>
-    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+    <p class="rss-subscribe">Subscribe to blog updates <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
   {%- endif -%}
+
+  <div id="twitter">
+    <a class="twitter-timeline" href="https://twitter.com/merdemicrobes?ref_src=twsrc%5Etfw">Tweets by merdemicrobes</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </div>
+
+  <hr>
   
   <div id="inat">
     <style type="text/css" media="screen">
-      .inat-widget { font-family: Georgia, serif; padding: 10px; line-height: 1; border: thin solid}
+      .inat-widget { font-family: Georgia, serif; padding: 10px; line-height: 1}
       .inat-widget-header {margin-bottom: 10px;}
       .inat-widget td {vertical-align: top; padding-bottom: 10px;}
       .inat-label { color: #888; }
