@@ -109,7 +109,7 @@ layout: default
                 return response.json();
             })
             .then(function (data) {
-                appendData(data);
+                appendData(data.orderedItems);
             })
          function appendData(data) {
             var mainContainer = document.getElementById("bookwyrm");
