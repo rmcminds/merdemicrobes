@@ -21,7 +21,7 @@ jobs:
         run: |
           git add .
           git diff
-          git config --global user.email "action@github.com"
-          git config --global user.name "GitHub Action"
+          git config --global user.email "r.mcminds@gmail.com"
+          git config --global user.name "rmcminds"
           git commit -am "Book data update" || exit 0
           git push
