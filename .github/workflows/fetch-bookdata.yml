@@ -10,21 +10,23 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v2
+        
+      - name: Set up Python
+        uses: actions/setup-python@v2
         with:
-          node-version: '14'
-      - name: Fetch data
-        run: |
-          curl -o reading.json "https://bookwyrm.social/user/rmcminds/shelf/reading.json?page=1"
-          mv reading.json assets/reading.json
-          curl -o read.json "https://bookwyrm.social/user/rmcminds/shelf/read.json?page=1"
-          mv read.json assets/read.json
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install beautifulsoup4 requests
+
+      - name: Run scrape script
+        run: python assets/get_books.py
+        
       - name: Commit and push if it's changed
         run: |
           git add .
           git diff
           git config --global user.email "r.mcminds@gmail.com"
           git config --global user.name "rmcminds"
-          git commit -am "Book data update" || exit 0
+          git commit -am "Book data update" || echo "No changes to commit"
           git push

@@ -107,88 +107,72 @@ layout: default
       <h3>
         Ryan recently finished reading:
       </h3>
-      <table id="read-book-table"></table>
+      <table id="read-books-table"></table>
       <h3>
         And is currently reading:
       </h3>
-      <table id="reading-book-table"></table>
+      <table id="reading-books-table"></table>
       <script>
         fetch('/assets/read.json')
           .then(response => response.json())
           .then(data => {
-              const table = document.getElementById('read-book-table');
+            const table = document.querySelector("#read-books-table tbody");
 
-              data.orderedItems.slice(0,3).forEach(item => {
-                  // Create new table row
-                  const tableRow = document.createElement('tr');
+            for (let i = 0; i < data.length; i++) {
+              const tr = document.createElement('tr');
 
-                  // Create table cell for title and link
-                  const titleCell = document.createElement('td');
-                  const link = document.createElement('a');
-                  link.href = item.id;
-                  link.innerText = item.title;
-                  titleCell.appendChild(link);
-                  tableRow.appendChild(titleCell);
+              const td1 = document.createElement('td');
+              if (data[i].img_url) {  // if img_url is present
+                const img = document.createElement('img');
+                img.src = data[i].img_url;
+                img.alt = data[i].title;
+                td1.appendChild(img);
+              } else {  // if img_url is not present
+                td1.textContent = "";  // or you can set it to a placeholder image url
+              }
 
-                  // Check if the book has a cover
-                  if (item.cover) {
-                      // Create table cell for cover image
-                      const imageCell = document.createElement('td');
-                      const imgElement = document.createElement('img');
-                      imgElement.src = item.cover.url;
-                      imgElement.alt = `Cover of ${item.title}`;
-                      imgElement.style.width = '100px'; // adjust the size as needed
-                      imageCell.appendChild(imgElement);
-                      tableRow.appendChild(imageCell);
-                  } else {
-                      // If no cover image, create an empty cell
-                      const emptyCell = document.createElement('td');
-                      tableRow.appendChild(emptyCell);
-                  }
+              const td2 = document.createElement('td');
+              const a = document.createElement('a');
+              a.href = data[i].link;
+              a.textContent = data[i].title;
+              td2.appendChild(a);
 
-                  // Append table row to table
-                  table.appendChild(tableRow);
-              });
-          })
-          .catch(console.error);
+              tr.appendChild(td1);
+              tr.appendChild(td2);
+
+              table.appendChild(tr);
+            }
+          });
         fetch('/assets/reading.json')
           .then(response => response.json())
           .then(data => {
-              const table = document.getElementById('reading-book-table');
-      
-              data.orderedItems.forEach(item => {
-                  // Create new table row
-                  const tableRow = document.createElement('tr');
-                  
-                  // Create table cell for title and link
-                  const titleCell = document.createElement('td');
-                  const link = document.createElement('a');
-                  link.href = item.id;
-                  link.innerText = item.title;
-                  titleCell.appendChild(link);
-                  tableRow.appendChild(titleCell);
-                  
-                  // Check if the book has a cover
-                  if (item.cover) {
-                      // Create table cell for cover image
-                      const imageCell = document.createElement('td');
-                      const imgElement = document.createElement('img');
-                      imgElement.src = item.cover.url;
-                      imgElement.alt = `Cover of ${item.title}`;
-                      imgElement.style.width = '100px'; // adjust the size as needed
-                      imageCell.appendChild(imgElement);
-                      tableRow.appendChild(imageCell);
-                  } else {
-                      // If no cover image, create an empty cell
-                      const emptyCell = document.createElement('td');
-                      tableRow.appendChild(emptyCell);
-                  }
-      
-                  // Append table row to table
-                  table.appendChild(tableRow);
-              });
-          })
-          .catch(console.error);
+            const table = document.querySelector("#reading-books-table tbody");
+
+            for (let i = 0; i < data.length; i++) {
+              const tr = document.createElement('tr');
+
+              const td1 = document.createElement('td');
+              if (data[i].img_url) {  // if img_url is present
+                const img = document.createElement('img');
+                img.src = data[i].img_url;
+                img.alt = data[i].title;
+                td1.appendChild(img);
+              } else {  // if img_url is not present
+                td1.textContent = "";  // or you can set it to a placeholder image url
+              }
+
+              const td2 = document.createElement('td');
+              const a = document.createElement('a');
+              a.href = data[i].link;
+              a.textContent = data[i].title;
+              td2.appendChild(a);
+
+              tr.appendChild(td1);
+              tr.appendChild(td2);
+
+              table.appendChild(tr);
+            }
+          });
       </script>
     </div>
     
