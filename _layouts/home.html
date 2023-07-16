@@ -125,17 +125,17 @@ layout: default
                 // Create table cell for title and link
                 const titleCell = document.createElement('td');
                 const link = document.createElement('a');
-                link.href = item.id;
+                link.href = item.link;
                 link.innerText = item.title;
                 titleCell.appendChild(link);
                 tableRow.appendChild(titleCell);
 
                 // Check if the book has a cover
-                if (item.cover) {
+                if (item.img_url) {
                     // Create table cell for cover image
                     const imageCell = document.createElement('td');
                     const imgElement = document.createElement('img');
-                    imgElement.src = item.cover.url;
+                    imgElement.src = item.img_url;
                     imgElement.alt = `Cover of ${item.title}`;
                     imgElement.style.width = '100px'; // adjust the size as needed
                     imageCell.appendChild(imgElement);
@@ -163,17 +163,17 @@ layout: default
                 // Create table cell for title and link
                 const titleCell = document.createElement('td');
                 const link = document.createElement('a');
-                link.href = item.id;
+                link.href = item.link;
                 link.innerText = item.title;
                 titleCell.appendChild(link);
                 tableRow.appendChild(titleCell);
 
                 // Check if the book has a cover
-                if (item.cover) {
+                if (item.img_url) {
                     // Create table cell for cover image
                     const imageCell = document.createElement('td');
                     const imgElement = document.createElement('img');
-                    imgElement.src = item.cover.url;
+                    imgElement.src = item.img_url;
                     imgElement.alt = `Cover of ${item.title}`;
                     imgElement.style.width = '100px'; // adjust the size as needed
                     imageCell.appendChild(imgElement);
