@@ -42,8 +42,8 @@ layout: default
   -->
   
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <link rel="stylesheet" href="mastodon.widget.css" />
-  <script type="text/javascript" src="mastodon.widget.js"></script>
+  <link rel="stylesheet" href="/assets/mastodon.widget.css" />
+  <script type="text/javascript" src="/assets/mastodon.widget.js"></script>
   <script>
   $(document).ready(function() {
   // jQUERY is required!
@@ -111,7 +111,7 @@ layout: default
       </h2>
       <table id="reading-book-table"></ul>
       <script>
-        fetch('_data/read.json')
+        fetch('/assets/read.json')
           .then(response => response.json())
           .then(data => {
               const table = document.getElementById('read-book-table');
@@ -149,7 +149,7 @@ layout: default
               });
           })
           .catch(console.error);
-        fetch('_data/reading.json')
+        fetch('/assets/reading.json')
           .then(response => response.json())
           .then(data => {
               const table = document.getElementById('reading-book-table');
