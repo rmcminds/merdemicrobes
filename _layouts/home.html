@@ -105,27 +105,43 @@ layout: default
       <ul id="bookTitles"></ul>
       <script>
         fetch('reading.json')
-          .then(response => {
-            // Parse the response as JSON
-            return response.json();
-          })
-          .then(data => {
-            // Handle the JSON data received
-            const bookTitles = data.orderedItems.map(item => item.title);
+            .then(response => response.json())
+            .then(data => {
+                const list = document.getElementById('book-list');
+                data.orderedItems.forEach(item => {
+                    // Create new list item
+                    const listItem = document.createElement('li');
+                    
+                    // Create link element
+                    const link = document.createElement('a');
+                    link.href = item.id;
+                    link.innerText = item.title;
+                    
+                    // Append link to list item
+                    listItem.appendChild(link);
+                    
+                    // Create author element and append to list item
+                    const authorElement = document.createElement('p');
+                    authorElement.innerText = `Author: ${item.authors[0]}`;  // Assuming the first author is the main one
+                    listItem.appendChild(authorElement);
+                    
+                    // Check if the book has a cover
+                    if (item.cover) {
+                        // Create img element and set the src and alt text
+                        const imgElement = document.createElement('img');
+                        imgElement.src = item.cover.url;
+                        imgElement.alt = `Cover of ${item.title}`;
+                        imgElement.style.width = '100px'; // adjust the size as needed
+                        
+                        // Append image to list item
+                        listItem.appendChild(imgElement);
+                    }
         
-            // Select the list from the DOM
-            const bookList = document.getElementById('bookTitles');
-        
-            // Insert each title into the list
-            bookTitles.forEach(title => {
-              const listItem = document.createElement('li');
-              listItem.textContent = title;
-              bookList.appendChild(listItem);
-            });
-          })
-          .catch(error => {
-            console.error('There has been a problem with your fetch operation:', error);
-          });
+                    // Append list item to list
+                    list.appendChild(listItem);
+                });
+            })
+            .catch(console.error);
       </script>
     </div>
     
