@@ -109,13 +109,13 @@ layout: default
                 return response.json();
             })
             .then(function (data) {
-                appendData(data.orderedItems);
+                appendData(data);
             })
          function appendData(data) {
             var mainContainer = document.getElementById("bookwyrm");
-            for (var i = 0; i < data.length; i++) {
+            for (var i = 0; i < data.orderedItems.length; i++) {
                 var div = document.createElement("div");
-                div.innerHTML = 'Title: ' + data[i].title;
+                div.innerHTML = 'Title: ' + data.orderedItems[i].title;
                 mainContainer.appendChild(div);
             }
         }
