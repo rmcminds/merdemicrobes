@@ -25,7 +25,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   A celebration of both ups and downs as I explore microbial ecology and more
 url: "https://merdemicrobes.org"
 github_username: rmcminds
-twitter_username: merdemicrobes
+twitter_username: rmcminds
 disqus:
   shortname: merdemicrobes
 
