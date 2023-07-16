@@ -102,14 +102,34 @@ layout: default
     
     <div style="padding-top:30px">
       Books Ryan is currently reading:
+      <ul id="bookTitles"></ul>
       <script>
         fetch('https://bookwyrm.social/user/rmcminds/shelf/reading.json?page=1')
-          .then(function (response) {
+          .then(response => {
+            // Check if the response is OK (status code 200)
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+            // Parse the response as JSON
             return response.json();
           })
-          .then(function (data) {
-            document.write('Title: ');
+          .then(data => {
+            // Handle the JSON data received
+            const bookTitles = data.orderedItems.map(item => item.title);
+        
+            // Select the list from the DOM
+            const bookList = document.getElementById('bookTitles');
+        
+            // Insert each title into the list
+            bookTitles.forEach(title => {
+              const listItem = document.createElement('li');
+              listItem.textContent = title;
+              bookList.appendChild(listItem);
+            });
           })
+          .catch(error => {
+            console.error('There has been a problem with your fetch operation:', error);
+          });
       </script>
     </div>
     
