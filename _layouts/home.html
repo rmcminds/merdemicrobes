@@ -102,12 +102,12 @@ layout: default
     
     <div style="padding-top:30px">
       <span>Books Ryan is currently reading (via </span><a href="https://bookwyrm.social/user/rmcminds/books/reading">Bookwyrm.social</a><span>):</span>
-      <ul id="bookTitles"></ul>
+      <ul id="book-list"></ul>
       <script>
         fetch('reading.json')
             .then(response => response.json())
             .then(data => {
-                const list = document.getElementById('book-list');
+                const bookList = document.getElementById('book-list');
                 data.orderedItems.forEach(item => {
                     // Create new list item
                     const listItem = document.createElement('li');
@@ -138,7 +138,7 @@ layout: default
                     }
         
                     // Append list item to list
-                    list.appendChild(listItem);
+                    bookList.appendChild(listItem);
                 });
             })
             .catch(console.error);
