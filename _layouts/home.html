@@ -100,25 +100,17 @@ layout: default
     <hr style="border-top: 1px solid #e1e4e8; border-right: none; border-bottom: none; border-left: none;">
     
     <div style="padding-top:30px">
-      <div>Books Ryan is currently reading:</div>
-      <div id="bookwyrm"></div>
-
+      Books Ryan is currently reading:
       <script>
          fetch('https://bookwyrm.social/user/rmcminds/shelf/reading.json?page=1')
             .then(function (response) {
                 return response.json();
             })
             .then(function (data) {
-                appendData(data);
+              for (var i = 0; i < data.orderedItems.length; i++) {
+                document.write(div.innerHTML = 'Title: ' + data.orderedItems[i].title);
+              }
             })
-         function appendData(data) {
-            var mainContainer = document.getElementById("bookwyrm");
-            for (var i = 0; i < data.orderedItems.length; i++) {
-                var div = document.createElement("div");
-                div.innerHTML = 'Title: ' + data.orderedItems[i].title;
-                mainContainer.appendChild(div);
-            }
-        }
       </script>
     </div>
     
