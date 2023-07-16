@@ -17,9 +17,9 @@ jobs:
       - name: Fetch data
         run: |
           curl -o reading.json "https://bookwyrm.social/user/rmcminds/shelf/reading.json?page=1"
-          mv reading.json _data/reading.json
+          mv reading.json assets/reading.json
           curl -o read.json "https://bookwyrm.social/user/rmcminds/shelf/read.json?page=1"
-          mv read.json _data/read.json
+          mv read.json assets/read.json
       - name: Commit and push if it's changed
         run: |
           git add .
