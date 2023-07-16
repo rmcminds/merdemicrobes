@@ -1,0 +1,25 @@
+name: Fetch Book Data
+on:
+  schedule:
+    - cron: '0 4 * * *'  # This line means the action will run everyday at 00:00
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: Fetch data
+        run: |
+          curl -o reading.json "https://bookwyrm.social/user/rmcminds/shelf/reading.json?page=1"
+      - name: Commit and push if it's changed
+        run: |
+          git diff
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
+          git commit -am "Book data update" || exit 0
+          git push
