@@ -28,6 +28,9 @@ github_username: rmcminds
 twitter_username: rmcminds
 disqus:
   shortname: merdemicrobes
+mastodon:
+- username: rmcminds
+  instance: mastodon.social
 
 # Build settings
 theme: minima
