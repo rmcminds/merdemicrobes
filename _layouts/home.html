@@ -96,21 +96,20 @@ layout: default
         <strong><a href="https://www.inaturalist.org/observations/rmcminds">View Ryan's observations &raquo;</a></strong>
       </div>
     </div>
+    <div style="padding-top:20px"></div>
 
     <hr style="border-top: 1px solid #e1e4e8; border-right: none; border-bottom: none; border-left: none;">
     
     <div style="padding-top:30px">
       Books Ryan is currently reading:
       <script>
-         fetch('https://bookwyrm.social/user/rmcminds/shelf/reading.json?page=1')
-            .then(function (response) {
-                return response.json();
-            })
-            .then(function (data) {
-              for (var i = 0; i < data.orderedItems.length; i++) {
-                document.write('Title: ' + data.orderedItems[i].title);
-              }
-            })
+        fetch('https://bookwyrm.social/user/rmcminds/shelf/reading.json?page=1')
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (data) {
+            document.write('Title: ')
+          })
       </script>
     </div>
     
