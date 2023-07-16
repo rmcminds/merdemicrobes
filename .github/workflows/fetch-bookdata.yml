@@ -1,5 +1,6 @@
 name: Fetch Book Data
 on:
+  workflow_dispatch:
   schedule:
     - cron: '0 8 * * *'  # This line means the action will run everyday at 08:00 in the UK
 
