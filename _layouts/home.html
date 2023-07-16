@@ -96,20 +96,16 @@ layout: default
         <strong><a href="https://www.inaturalist.org/observations/rmcminds">View Ryan's observations &raquo;</a></strong>
       </div>
     </div>
-    <div style="padding-top:20px"></div>
 
+    <div style="padding-top:20px"></div>
     <hr style="border-top: 1px solid #e1e4e8; border-right: none; border-bottom: none; border-left: none;">
     
     <div style="padding-top:30px">
       Books Ryan is currently reading:
       <ul id="bookTitles"></ul>
       <script>
-        fetch('https://bookwyrm.social/user/rmcminds/shelf/reading.json?page=1')
+        fetch('reading.json')
           .then(response => {
-            // Check if the response is OK (status code 200)
-            if (!response.ok) {
-              throw new Error('Network response was not ok');
-            }
             // Parse the response as JSON
             return response.json();
           })
