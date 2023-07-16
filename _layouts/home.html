@@ -101,42 +101,49 @@ layout: default
     <hr style="border-top: 1px solid #e1e4e8; border-right: none; border-bottom: none; border-left: none;">
     
     <div style="padding-top:30px">
-      <span>Books Ryan is currently reading (via </span><a href="https://bookwyrm.social/user/rmcminds/books/reading">Bookwyrm.social</a><span>):</span>
-      <ul id="book-list"></ul>
+      <h2>
+        <span>Books Ryan is currently reading (via </span><a href="https://bookwyrm.social/user/rmcminds/books/reading">Bookwyrm.social</a><span>):</span>
+      </h2>
+      <ul id="book-table"></ul>
       <script>
         fetch('reading.json')
-            .then(response => response.json())
-            .then(data => {
-                const bookList = document.getElementById('book-list');
-                data.orderedItems.forEach(item => {
-                    // Create new list item
-                    const listItem = document.createElement('li');
-                    
-                    // Create link element
-                    const link = document.createElement('a');
-                    link.href = item.id;
-                    link.innerText = item.title;
-                    
-                    // Append link to list item
-                    listItem.appendChild(link);
-
-                    // Check if the book has a cover
-                    if (item.cover) {
-                        // Create img element and set the src and alt text
-                        const imgElement = document.createElement('img');
-                        imgElement.src = item.cover.url;
-                        imgElement.alt = `Cover of ${item.title}`;
-                        imgElement.style.width = '100px'; // adjust the size as needed
-                        
-                        // Append image to list item
-                        listItem.appendChild(imgElement);
-                    }
-        
-                    // Append list item to list
-                    bookList.appendChild(listItem);
-                });
-            })
-            .catch(console.error);
+          .then(response => response.json())
+          .then(data => {
+              const table = document.getElementById('book-table');
+      
+              data.orderedItems.forEach(item => {
+                  // Create new table row
+                  const tableRow = document.createElement('tr');
+                  
+                  // Create table cell for title and link
+                  const titleCell = document.createElement('td');
+                  const link = document.createElement('a');
+                  link.href = item.id;
+                  link.innerText = item.title;
+                  titleCell.appendChild(link);
+                  tableRow.appendChild(titleCell);
+                  
+                  // Check if the book has a cover
+                  if (item.cover) {
+                      // Create table cell for cover image
+                      const imageCell = document.createElement('td');
+                      const imgElement = document.createElement('img');
+                      imgElement.src = item.cover.url;
+                      imgElement.alt = `Cover of ${item.title}`;
+                      imgElement.style.width = '100px'; // adjust the size as needed
+                      imageCell.appendChild(imgElement);
+                      tableRow.appendChild(imageCell);
+                  } else {
+                      // If no cover image, create an empty cell
+                      const emptyCell = document.createElement('td');
+                      tableRow.appendChild(emptyCell);
+                  }
+      
+                  // Append table row to table
+                  table.appendChild(tableRow);
+              });
+          })
+          .catch(console.error);
       </script>
     </div>
     
