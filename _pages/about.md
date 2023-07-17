@@ -8,7 +8,6 @@ permalink: /about/
 
 ```
 $whoami
-
 rmcminds: biologist, data scientist, wheel inventor
 ```
 
