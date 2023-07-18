@@ -4,14 +4,15 @@ title: "Maybe it doesn't Matern"
 date: 2021-04-07
 categories: code
 tags:
-- code
-- Stan
-- stats
+  - code
+  - Stan
+  - stats
+excerpt_separator: <!--more-->
 ---
 
 Calling all bored and crazy Stan coders. I need a long term coding partner.
 
-I’ve been doing a lot of completely solo work for a couple years now, and you can guess the result. I have a couple of really awesome models that I am proud of, and yet they’re (1) not quite what I want, (2) probably way more complicated and messy than necessary, and (3) sitting there, waiting for me to figure out how to be a real modeler and justify them.
+I’ve been doing a lot of completely solo work for a couple years now, and you can guess the result. I have a couple of really awesome models that I am proud of, and yet they’re (1) not quite what I want, (2) probably way more complicated and messy than necessary, and (3) sitting there, waiting for me to figure out how to be a real modeler and justify them.<!--more-->
 
 One of the things I was recently working on and am a bit stuck on is a Stan implementation of the circular Matern covariance function as described in “Covariance functions for mean square differentiable processes on spheres” (Guinness & Fuentes 2013). I just learned that the quadratic exponential covariance that I had been using is technically not valid for spherical distances, and that the linear exponential covariance is non-differentiable (bad for parameters in Stan, yes?). So this would be a nice addition. And I’m pretty sure I translated the math correctly, but it doesn’t… work. A few iterations of ADVI and it diverges when using my circular Matern implementation, whereas the version of my model with the technically invalid quadratic exponential runs just fine. So maybe I’m trying to solve a problem that doesn’t exist – but I want to make it work anyway!
 
