@@ -1,9 +1,10 @@
 ---
 layout: post
-title:  "merdemicrobes"
-date:   2021-03-29
+title: "merdemicrobes"
+date: 2021-03-29
 categories: musings
 ---
+
 When I started my first blog, I initially used this title for it. I had recently begun working in French Polynesia, was helping a French postdoc, and was interested in learning the language, and I thought, “‘Sea of Microbes’ in French, that’s nice.” I created the page and started working on the blog. And then that French postdoc saw the url: ‘merdemicrobes’.
 
 ‘What?? You can’t really call it that…’
