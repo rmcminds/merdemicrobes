@@ -20,3 +20,5 @@ I've created both this site and [The Cnidae Gritty](https://thecnidaegritty.org)
 I'm not *super* experienced with web development, but have had some success 'making things happen', like the iNatle Shiny app over at [The Cnidae Gritty](https://thecnidaegritty.org/iNatle/), the Javascript for the little bit of fun with the site title (refresh a few times... :) ) and for some of the widgets on the [homepage](/), and the Python and GitHub Actions workflow for updating my reading lists daily by scraping data from bookwyrm.social. You can check out their code at the [GitHub repo](https://github.com/rmcminds/merdemicrobes), although some of it is a bit buried at the moment. Feel free to send me a message if you're curious how to do something similar!
 
 For a little more about this site's title, check out the inaugural [blog post]({% post_url 2021-03-29-merdemicrobes %}).
+
+And for more about my personal viewpoints, check out my [Personal Philosophy](/about/personal-philosophy/) blog category.
