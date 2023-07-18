@@ -37,7 +37,9 @@ In short, plants are more energy-efficient and space-efficient than animals. We 
 
 Absolutely. That's why I tend to prefer oat milk over almond or soy milk. And some of the (delicious!) new meat imitations are still on my 'try to minimize' list. They seem pretty clearly better regarding emissions, but are certainly not as efficient as good ol' rice and beans, and I'm a bit concerned about all the plastic they seem to use. 
 
-The 'meat'/'not meat' distinction is a generally useful heuristic that makes it so I don't always have to put hours of research into every product I think about buying. If I learn about exceptions, I try to remember them. 
+The 'meat'/'not meat' distinction is a generally useful heuristic that makes it so I don't always have to put hours of research into every product I think about buying. If I learn about exceptions, I try to remember them.
+
+Eating less meat is just one part of a general attempt to live more modestly. Maybe I don't need every meal to include meat. Maybe I don't need a 3,000 sq ft home with a four-car garage and an SUV that I drive, empty, for tens of thousands of miles each year. Maybe I don't need to *fly* thousands of miles each year. Maybe I can be perfectly happy while generally consuming less.
 
 ### How confident are you about the science?
 
