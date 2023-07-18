@@ -23,11 +23,23 @@ If we didn't solve climate change ASAP, nothing else would matter for coral reef
 
 I think it was a message to the coral scientist list-serve, Coral List, that nudged me to reconsider vegetarianism. Among the carnage of that year, people in the field were looking for ways to **do** something. I decided that one thing I could do was reduce my meat consumption. And now, 7 years later (and counting), avoiding meat is still something that I feel is important. Many other changes to my lifestyle and philosophy were set in motion that year, but those may be for another blog post.
 
-For this one, I'll go over the details of my plant-based philosophy. I hope to edit this if my views change over time and if I find resources that influence my thinking or help to explain it. I don't plan to hide any changes - anything I don't write explicitly will be available by following changes to the blog post on GitHub ([here's](https://github.com/rmcminds/merdemicrobes/commits/main/_posts/2023-07-17-pseudoquasivegetarianism.md) the whole history and [here's](https://github.com/rmcminds/merdemicrobes/compare/08a5e531fb0bdd4a29d7b987c8b86d7565c37b81...main#diff-e1231061ed59440567949516d828248f44ac94e429729bb7393fa2aacc5263ca) an example comparing the first version to the latest).
+For this one, I'll go over the details of my plant-based philosophy. I hope to edit this if my views change over time and if I find resources that influence my thinking or help to explain it. I don't plan to hide any changes - anything I don't write explicitly will be available by following changes to the blog post on GitHub ([here's](https://github.com/rmcminds/merdemicrobes/commits/main/_posts/2023-07-17-pseudoquasivegetarianism.md) the whole history and [here's](https://github.com/rmcminds/merdemicrobes/compare/08a5e531fb0bdd4a29d7b987c8b86d7565c37b81...main#diff-e1231061ed59440567949516d828248f44ac94e429729bb7393fa2aacc5263ca) an example url comparing the first version to the latest).
+
+### Why don't you just keep this to yourself?
+
+I'm trying to explain what may sometimes seem rude or hypocritical, and yeah, maybe I hope you'd be interested in joining me...
 
 ### How does eating meat affect climate change?
 
 In short, plants are more energy-efficient and space-efficient than animals. We get our energy (including fertilizer) from fossil fuels, so using more energy means releasing more carbon into the atmosphere. And in places like the Amazon rain forest, carbon is stored directly in the living plants that form the forest. Deforestation causes carbon to be released and also keeps the forest from pulling it back out of the atmosphere in the future. And in the Amazon, deforestation is primarily driven by the need for more agricultural space - either ranchland itself, or for crops. By volume, most of those Amazonian crops aren't directly eaten by humans; they're fed to animals, which involves a lot of wasted energy and yet more space and fuel-guzzling transport. 
+
+### If it's all about efficiency, then aren't some meats more efficient than some veggies?
+
+Absolutely. That's why I tend to prefer oat milk over almond or soy milk. And some of the (delicious!) new meat imitations are still on my 'try to minimize' list. They seem pretty clearly better regarding emissions, but are certainly not as efficient as good ol' rice and beans, and I'm a bit concerned about all the plastic they seem to use. 
+
+The 'meat'/'not meat' distinction is a generally useful heuristic that makes it so I don't always have to put hours of research into every product I think about buying. If I learn about exceptions, I try to remember them. 
+
+Also, when I do cheat, I even then almost universally cheat with chicken or seafood, which tend to better in many regards than beef or pork (although I've embarrassingly been caught eating seafood that's NOT better in any way whatsoever. One of the drawbacks of using simple heuristics is that I tend to forget some of the details over time. That's actually one of the reasons I've written this post - it's something I can go back to later to refresh my own memory.)
 
 ### How confident are you about the science?
 
