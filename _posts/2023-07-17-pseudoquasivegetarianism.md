@@ -41,6 +41,21 @@ The 'meat'/'not meat' distinction is a generally useful heuristic that makes it 
 
 Eating less meat is just one part of a general attempt to live more modestly. Maybe I don't need every meal to include meat. Maybe I don't need a 3,000 sq ft home with a four-car garage and an SUV that I drive, empty, for tens of thousands of miles each year. Maybe I don't need to *fly* thousands of miles each year. Maybe I don't need so many clothes, and can repair what I have rather than rapidly replace it. Maybe I can be perfectly happy while generally consuming less.
 
+### If it's all about efficiency, shouldn't plant-based food be cheaper than meat?
+
+Yes, I do believe so. And that's clearly true in a lot of cases: rice, beans, and potatoes are extremely cheap staples, and form the base of many delicious cuisines from around the world. But there are two major factors that artificially lower the cost of meat (leading to, for example, cheap mostly-meat fast-food joints that have more expensive veggie options):
+
+1. Government subsidies are widespread.
+  - Meat production uses more fossil fuels. Subsidies for them get passed on.
+  - The ability to cheaply/freely graze on public lands all over the Western US is so important to many ranchers that they apparently willing to violently take over and trash wildlife refuges in 'protest'. But why are so many people sympathetic to the idea that they should be able to destroy vast tracts of public lands and pay nothing for it? What possible reason could there be for the public to just give them these resources for free? (answer: cheaper hamburgers)
+2. Economy-wide, we have a major problem 'forgetting' to factor the cost of pollution and waste disposal into the cost of goods. If a company wants to produce a pound of beef or a pound of beets, we can imagine that all the costs of production might be the same. Thus the cost to the consumer might be the same. But the cost of production doesn't adequately account for the environmental consequences of beef over beet production. Compared to beets, producing a pound of beef has the following costs that are not borne by the producer or consumer, but by others:
+  - more carbon released into the atmosphere (which has a cost that the whole globe will pay)
+  - more waste and pollution released locally (which has a cost to local waterways and the people who rely on them, who are usually much poorer than the meat producers)
+  - more risk of disease to humans (I think in 2023 we can safely conclude that zoonotic disease carries a lot of costs)
+  - and more
+
+I might differ from a lot of other environmentalists in that I strongly believe that we can use free-market capitalism to solve some of these problems. If governments stop giving away free resources, nobody should have to think about the environmental cost of what they eat. Things that are more damaging should be more expensive - unless there's theft involved at some point in the supply chain. We need to stop the theft in the long term, and individually boycott the thieves in the short-term.
+
 ### How confident are you about the science?
 
 To be honest, I have my doubts. It has been pointed out that much of the agricultural emissions attributed to the meat industry might not be avoided even if we all suddenly switched to plant-based diets. For example, note that I said 'by volume' above when explaining how deforestation can be attributed to the meat industry. The problem is, much of those crops are soy, which has the oil pressed from it (a small percentage of the total soy plant) for human consumption, and then the 'waste' is shipped overseas for animal feed. If we still want that soybean oil and we can't directly eat the leftovers, then why not feed them to animals and make use of them?
