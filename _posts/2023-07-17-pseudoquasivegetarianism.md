@@ -15,7 +15,8 @@ excerpt_separator: <!--more-->
 
 <details>
   <summary>2016 was a pivotal year for me.</summary>
-
+  
+  <br>
   <p>For the past four years, I  had been traveling the world and studying coral reefs from every region. I was becoming an expert on their evolution and their interactions with various microbes. I knew these ecosystems had been in decline for decades, that climate change was a major threat, and that some people had claimed that eating meat and flying in airplanes were major contributors to climate change. But I also knew there were other threats - other reasons corals had been in decline, like infectious diseases and overdevelopment. I also knew that my individual choice to scale back on meat or flying would have zero impact on the survival of even a single coral colony. As I flew back and forth across the globe, I made no effort to change the meat-centric diet that formed a large part of my cultural inheritance. I felt like my personal physiology was acclimated to meat in every meal, and that I could better direct my conservation efforts toward my science.</p>
 
   <p>And then there was 2016.</p>
