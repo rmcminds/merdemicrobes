@@ -8,6 +8,7 @@ tags:
 - Stan
 - stats
 ---
+
 Calling all bored and crazy Stan coders. I need a long term coding partner.
 
 I’ve been doing a lot of completely solo work for a couple years now, and you can guess the result. I have a couple of really awesome models that I am proud of, and yet they’re (1) not quite what I want, (2) probably way more complicated and messy than necessary, and (3) sitting there, waiting for me to figure out how to be a real modeler and justify them.
