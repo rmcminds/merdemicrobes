@@ -42,6 +42,7 @@ include:
   - _pages
 
 header_pages:
+  - _pages/blog-archive.md
   - _pages/about.md
   
 # Exclude from processing.
