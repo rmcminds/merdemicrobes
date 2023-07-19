@@ -29,20 +29,20 @@ permalink: /blog-archive/
   {% for tag in site.tags %}
     <div class="archive-group">
       {% capture tag_name %}{{ tag | first }}{% endcapture %}
-      <div style="background-color: darker" id="#{{ tag_name | slugify }}"></div>
+      <div style="background-color: lightgrey" id="#{{ tag_name | slugify }}"></div>
       <p></p>
       
       <details>
-        <summary><h4 class="tag-head">{{ tag_name }}</h4></summary>
+        <h4 class="tag-head"><summary>{{ tag_name }}</summary></h4>
         
         <a name="{{ tag_name | slugify }}"></a>
         {% for post in site.tags[tag_name] %}
         <article class="archive-item">
           <a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a>
         </article>
-      </details>
       
-      {% endfor %}
+        {% endfor %}
+      </details>
     </div>
   {% endfor %}
 </div>
