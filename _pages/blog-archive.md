@@ -4,7 +4,8 @@ title: "Blog Archive"
 permalink: /blog-archive/
 ---
 
-<div id="categories" style="padding-bottom:30px">
+<hr style="border-top: 1px solid #e1e4e8; border-right: none; border-bottom: none; border-left: none;">
+<div id="categories" style="padding-top:30px; padding-bottom:30px">
   <h3>Categories</h3>
   {% assign categories = "" | split:"" %}
   {% for c in site.categories %}
