@@ -31,7 +31,7 @@ permalink: /blog-archive/
       <div id="#{{ tag_name | slugify }}"></div>
       <p></p>
 
-      <h3 class="tag-head">{{ tag }}</h3>
+      <h3 class="tag-head">{{ tag_name }}</h3>
       <a name="{{ tag_name | slugify }}"></a>
       {% for post in site.tags[tag_name] %}
       <article class="archive-item">
