@@ -15,7 +15,7 @@ layout: default
     <hr style="border-top: 1px solid #e1e4e8; border-right: none; border-bottom: none; border-left: none;">
     <div style="padding-top:30px"></div>
     <ul class="post-list">
-      {%- for post in site.posts -%}
+      {%- for post in site.posts limit:5 -%}
       <li>
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         <span class="post-meta">{{ post.date | date: date_format }}</span>
@@ -31,6 +31,7 @@ layout: default
       </li>
       {%- endfor -%}
     </ul>
+    <p>See <a href="/blog-archive/">more</a></p>
     <p style="padding-bottom: 20px" class="rss-subscribe">Subscribe to blog updates <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
   {%- endif -%}
 
