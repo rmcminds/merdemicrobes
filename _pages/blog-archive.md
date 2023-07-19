@@ -4,9 +4,10 @@ title: "Blog Archive"
 permalink: /blog-archive/
 ---
 
-<div id="categories">
+<div id="categories" style="padding-bottom:30px">
   <h3>Categories</h3>
-  {% for category in site.categories %}
+  {% assign categories_sorted = site.categories | sort %}
+  {% for category in categories_sorted %}
     <div class="archive-group">
       {% capture category_name %}{{ category | first }}{% endcapture %}
       <div id="#{{ category_name | slugify }}"></div>
@@ -26,14 +27,15 @@ permalink: /blog-archive/
 <hr style="border-top: 1px solid #e1e4e8; border-right: none; border-bottom: none; border-left: none;">
 <div id="tags" style="padding-top:30px">
   <h3>Tags</h3>
-  {% for tag in site.tags %}
-    <div class="archive-group">
+  {% assign tags_sorted = site.tags | sort %}
+  {% for tag in tags_sorted %}
+    <div class="archive-group" style="background-color: lightgrey">
       {% capture tag_name %}{{ tag | first }}{% endcapture %}
-      <div style="background-color: lightgrey" id="#{{ tag_name | slugify }}"></div>
+      <div id="#{{ tag_name | slugify }}"></div>
       <p></p>
       
       <details>
-        <h4 class="tag-head"><summary>{{ tag_name }}</summary></h4>
+        <summary>{{ tag_name }}</summary>
         
         <a name="{{ tag_name | slugify }}"></a>
         {% for post in site.tags[tag_name] %}
