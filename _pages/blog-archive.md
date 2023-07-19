@@ -23,7 +23,8 @@ permalink: /blog-archive/
   {% endfor %}
 </div>
 
-<div id="tags">
+<hr style="border-top: 1px solid #e1e4e8; border-right: none; border-bottom: none; border-left: none;">
+<div id="tags" style="padding-top:30px">
   <h3>Tags</h3>
   {% for tag in site.tags %}
     <div class="archive-group">
