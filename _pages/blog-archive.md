@@ -12,11 +12,11 @@ permalink: /blog-archive/
       <div id="#{{ category_name | slugify }}"></div>
       <p></p>
       
-      <h3 class="category-head">{{ category_name }}</h3>
+      <h4 class="category-head">{{ category_name }}</h4>
       <a name="{{ category_name | slugify }}"></a>
       {% for post in site.categories[category_name] %}
       <article class="archive-item">
-        <h4><a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a></h4>
+        <a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a>
       </article>
       {% endfor %}
     </div>
@@ -29,15 +29,19 @@ permalink: /blog-archive/
   {% for tag in site.tags %}
     <div class="archive-group">
       {% capture tag_name %}{{ tag | first }}{% endcapture %}
-      <div id="#{{ tag_name | slugify }}"></div>
+      <div style="background-color: darker" id="#{{ tag_name | slugify }}"></div>
       <p></p>
-
-      <h3 class="tag-head">{{ tag_name }}</h3>
-      <a name="{{ tag_name | slugify }}"></a>
-      {% for post in site.tags[tag_name] %}
-      <article class="archive-item">
-        <h4><a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a></h4>
-      </article>
+      
+      <details>
+        <summary><h4 class="tag-head">{{ tag_name }}</h4></summary>
+        
+        <a name="{{ tag_name | slugify }}"></a>
+        {% for post in site.tags[tag_name] %}
+        <article class="archive-item">
+          <a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a>
+        </article>
+      </details>
+      
       {% endfor %}
     </div>
   {% endfor %}
