@@ -29,7 +29,7 @@ permalink: /blog-archive/
   <h3>Tags</h3>
   {% assign tags_sorted = site.tags | sort %}
   {% for tag in tags_sorted %}
-    <div class="archive-group" style="background-color: lightgrey">
+    <div class="archive-group" style="background-color: #F5F5F5; border-radius: 5px">
       {% capture tag_name %}{{ tag | first }}{% endcapture %}
       <div id="#{{ tag_name | slugify }}"></div>
       <p></p>
