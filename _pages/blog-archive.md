@@ -3,6 +3,8 @@ layout: page
 title: "Blog Archive"
 permalink: /blog-archive/
 ---
+  
+<link rel="stylesheet" href="/assets/archive.css" />
 
 <hr style="border-top: 1px solid #e1e4e8; border-right: none; border-bottom: none; border-left: none;">
 <div id="categories" style="padding-top:30px; padding-bottom:30px">
@@ -43,13 +45,14 @@ permalink: /blog-archive/
         <div id="#{{ tag | slugify }}"></div>
         
         <details>
-          <summary>{{ tag }}</summary>
+          <summary>{{ tag }} ({{site.tags[tag].size}} posts)</summary>
   
           <div style="background-color: white; border-radius: 5px; padding-left: 5px">
           <a name="{{ tag | slugify }}"></a>
           {% for post in site.tags[tag] %}
           <article class="archive-item">
-            <a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a>
+            {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+            <a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a><span> {{ post.date | date: date_format }}</span>
           </article>
         
           {% endfor %}
