@@ -23,7 +23,8 @@ permalink: /blog-archive/
       <a name="{{ category | slugify }}"></a>
       {% for post in site.categories[category] %}
       <article class="archive-item">
-        <a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a>
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        <a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a><span class="post-meta"> {{ post.date | date: date_format }}</span>
       </article>
       {% endfor %}
     </div>
@@ -69,7 +70,7 @@ permalink: /blog-archive/
 
 <hr style="border-top: 1px solid #e1e4e8; border-right: none; border-bottom: none; border-left: none;">
 <div id="chronological" style="padding-top:30px">
-  <h3>All (chronological)</h3>
+  <h3>All posts (chronological)</h3>
   <ul class="post-list">
     {%- for post in site.posts -%}
     <li>
