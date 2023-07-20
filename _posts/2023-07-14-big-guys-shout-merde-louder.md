@@ -7,8 +7,9 @@ tags:
   - allometry
   - transcriptomics
   - immunology
-  - stats
+  - statistics
   - phylogenetics
+  - publications
 excerpt_separator: <!--more-->
 ---
 
