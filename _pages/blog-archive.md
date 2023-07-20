@@ -37,13 +37,13 @@ permalink: /blog-archive/
   {% endfor %}
   {% assign tags_sorted = tags | sort_natural %}
   {% for tag in tags_sorted %}
-    <div class="archive-group" style="background-color: #e1e4e8; border-radius: 5px; padding-left: 5px">
+    <div class="archive-group" style="background-color: #e1e4e8; border-radius: 5px; padding: 5px; margin-top: 5px">
       <div id="#{{ tag | slugify }}"></div>
       
       <details>
         <summary>{{ tag }}</summary>
 
-        <div style="background-color: white; margin-top: 5px; border-radius: 5px; padding-left: 5px">
+        <div style="background-color: white; border-radius: 5px; padding-left: 5px">
         <a name="{{ tag | slugify }}"></a>
         {% for post in site.tags[tag] %}
         <article class="archive-item">
