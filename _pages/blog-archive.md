@@ -37,7 +37,7 @@ permalink: /blog-archive/
   {% endfor %}
   {% assign tags_sorted = tags | sort_natural %}
   {% for tag in tags_sorted %}
-    <div class="archive-group" style="background-color: #e1e4e8; border-radius: 5px; padding: 5px">
+    <div class="archive-group" style="background-color: #e1e4e8; border-radius: 5px; padding-left: 5px">
       <div id="#{{ tag | slugify }}"></div>
       
       <details>
