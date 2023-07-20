@@ -44,7 +44,7 @@ permalink: /blog-archive/
       <details>
         <summary>{{ tag }}</summary>
 
-        <div style="background-color: white">
+        <div style="background-color: white; margin: 0px; padding-left: 5px">
         <a name="{{ tag | slugify }}"></a>
         {% for post in site.tags[tag] %}
         <article class="archive-item">
