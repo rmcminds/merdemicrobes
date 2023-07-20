@@ -7,6 +7,7 @@ tags:
   - vegetarianism
   - climate-change
   - culture
+  - coral-reefs
   - coral-bleaching
   - conservation
   - policy

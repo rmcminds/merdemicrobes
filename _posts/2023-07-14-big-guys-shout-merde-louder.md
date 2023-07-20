@@ -2,7 +2,7 @@
 layout: post
 title: "Big guys shout 'merde!' louder"
 date: 2023-07-14
-categories: "new-results"
+categories: research
 tags:
   - allometry
   - transcriptomics
@@ -10,6 +10,8 @@ tags:
   - statistics
   - phylogenetics
   - publications
+  - new-results
+  - evolution
 excerpt_separator: <!--more-->
 ---
 
