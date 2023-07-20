@@ -39,12 +39,11 @@ permalink: /blog-archive/
   {% for tag in tags_sorted %}
     <div class="archive-group" style="background-color: #e1e4e8; border-radius: 5px; padding: 5px">
       <div id="#{{ tag | slugify }}"></div>
-      <p></p>
       
       <details>
         <summary>{{ tag }}</summary>
 
-        <div style="background-color: white; margin: 0px; padding-left: 5px">
+        <div style="background-color: white; margin: 0px; border-radius: 5px; padding-left: 5px">
         <a name="{{ tag | slugify }}"></a>
         {% for post in site.tags[tag] %}
         <article class="archive-item">
@@ -54,6 +53,7 @@ permalink: /blog-archive/
         {% endfor %}
         </div>
       </details>
+      
     </div>
   {% endfor %}
 </div>
