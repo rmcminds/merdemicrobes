@@ -29,34 +29,38 @@ permalink: /blog-archive/
 </div>
 
 <hr style="border-top: 1px solid #e1e4e8; border-right: none; border-bottom: none; border-left: none;">
-<div id="tags" style="padding-top:30px; padding-bottom:30px">
-  <h3>Tags</h3>
-  {% assign tags = "" | split:"" %}
-  {% for t in site.tags %}
-    {% assign tags = tags | push: t[0] %}
-  {% endfor %}
-  {% assign tags_sorted = tags | sort_natural %}
-  {% for tag in tags_sorted %}
-    <div class="archive-group" style="background-color: #e1e4e8; border-radius: 5px; padding: 5px; margin-top: 5px">
-      <div id="#{{ tag | slugify }}"></div>
-      
-      <details>
-        <summary>{{ tag }}</summary>
-
-        <div style="background-color: white; border-radius: 5px; padding-left: 5px">
-        <a name="{{ tag | slugify }}"></a>
-        {% for post in site.tags[tag] %}
-        <article class="archive-item">
-          <a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a>
-        </article>
-      
-        {% endfor %}
-        </div>
-      </details>
-      
-    </div>
-  {% endfor %}
-</div>
+<details>
+  <summary style="display: inline"><h3>Tags</h3></summary>
+  
+  <div id="tags" style="padding-top:30px; padding-bottom:30px; margin:5px">
+    {% assign tags = "" | split:"" %}
+    {% for t in site.tags %}
+      {% assign tags = tags | push: t[0] %}
+    {% endfor %}
+    {% assign tags_sorted = tags | sort_natural %}
+    {% for tag in tags_sorted %}
+      <div class="archive-group" style="background-color: #e1e4e8; border-radius: 5px; padding: 5px; margin-top: 5px">
+        <div id="#{{ tag | slugify }}"></div>
+        
+        <details>
+          <summary>{{ tag }}</summary>
+  
+          <div style="background-color: white; border-radius: 5px; padding-left: 5px">
+          <a name="{{ tag | slugify }}"></a>
+          {% for post in site.tags[tag] %}
+          <article class="archive-item">
+            <a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a>
+          </article>
+        
+          {% endfor %}
+          </div>
+        </details>
+        
+      </div>
+    {% endfor %}
+  </div>
+  
+</details> 
 
 <hr style="border-top: 1px solid #e1e4e8; border-right: none; border-bottom: none; border-left: none;">
 <div id="chronological" style="padding-top:30px">
