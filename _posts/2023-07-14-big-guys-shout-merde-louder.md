@@ -8,7 +8,7 @@ tags:
   - transcriptomics
   - immunology
   - statistics
-  - phylogenetics
+  - phylogenetic-statistics
   - publications
   - new-results
   - evolution
