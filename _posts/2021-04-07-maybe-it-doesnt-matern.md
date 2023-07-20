@@ -2,11 +2,15 @@
 layout: post
 title: "Maybe it doesn't Matern"
 date: 2021-04-07
-categories: stats
+categories: modeling
 tags:
   - code
   - Stan
-  - stats
+  - statistics
+  - modeling
+  - help-wanted
+  - Bayes
+  - spatial-statistics
 excerpt_separator: <!--more-->
 ---
 

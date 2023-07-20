@@ -6,8 +6,14 @@ categories: 'personal-philosophy'
 tags:
   - vegetarianism
   - climate-change
-  - language
   - culture
+  - coral-bleaching
+  - conservation
+  - policy
+  - personal-philosophy
+  - academia
+  - leadership
+  - activism
 excerpt_separator: <!--more-->
 ---
 
