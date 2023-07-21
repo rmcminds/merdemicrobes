@@ -59,8 +59,7 @@ Yes, I do believe so. And that's clearly true in a lot of cases: rice, beans, an
 1. Government subsidies are widespread.
   - Meat production uses more fossil fuels. Subsidies for them get passed on.
   - The ability to cheaply/freely graze on public lands all over the Western US is so important to ranchers that some are apparently willing to violently take over and trash wildlife refuges in 'protest' when they are asked to pay trivial amounts of money for the privilege. But why are so many people sympathetic to the idea that they should be able to use vast tracts of public lands and pay nothing for it? What possible reason could there be for the public to just give them these resources for free? (answer: cheaper hamburgers)
-  - There are plenty of other ways that the government props up animal agriculture, and I will add links here as I track them down again.
-<br>
+  - There are plenty of other ways that the government props up animal agriculture, and I will add links here as I track them down again.<br>
 2. Economy-wide, we have a major problem 'forgetting' to factor the cost of pollution and waste disposal into the cost of goods. If a company wants to produce a pound of beef or a pound of beets, we can imagine that all the costs of production might be the same. Thus the cost to the consumer might be the same. But the cost of production doesn't adequately account for the environmental consequences of beef over beet production. Compared to beets, producing a pound of beef has the following costs that are not borne by the producer or consumer, but by others:
   - More carbon is released into the atmosphere (which has a cost that the whole globe will pay)
   - More waste and pollution is released locally (which has a cost to local waterways and the people who rely on them, who are usually much poorer than the meat producers)
