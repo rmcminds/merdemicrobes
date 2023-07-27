@@ -73,10 +73,12 @@ layout: default
   <hr style="border-top: 1px solid #e1e4e8; border-right: none; border-bottom: none; border-left: none;">
   
   <div style="padding-top:30px">
-    <h2>Ryan's most recent new taxa posted to iNaturalist</h2>
+    <h2><a href='https://www.inaturalist.org/people/rmcminds'>iNaturalist</a></h2>
+    <h3>Ryan's most recent taxonomic discoveries</h3>
+    <p>(observations of taxa that he'd never before uploaded)</p>
     
     <table>
-      {% for row in site.data.most_recent_new_taxa limit: 6 %}
+      {% for row in site.data.most_recent_new_taxa limit: 5 %}
         {% if forloop.first %}
           <tr>
             <th>Taxon</th>
@@ -85,8 +87,12 @@ layout: default
         {% endif %}
         
         <tr>
-          <th>{{ row["scientific_name"] }}<br>{{ row["common_name"] }}</th>
-          <th><a href="{{ row["url"] }}"><img src="{{ row["image_url"] }}"></a></th>
+          <td><p><i>{{ row["scientific_name"] }}</i></p>
+              <p>{{ row["common_name"] }}</p>
+              <p>{{ row["observed_on"] }}</p>
+              <p>({{ row["quality_grade"] }})</p>
+          </td>
+          <td><a href="{{ row["url"] }}"><img src="{{ row["image_url"] }}" style="width: 100px"></a></td>
         </tr>
       {% endfor %}
     </table>
