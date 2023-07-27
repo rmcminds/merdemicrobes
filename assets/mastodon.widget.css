@@ -18,7 +18,6 @@
 
 .mt-header,
 .mt-footer {
-  border-radius: 5px;
 	padding: 10px 10px;
 }
 
@@ -30,6 +29,8 @@
 }
 
 .mt-header {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 	font-weight: bold;
 	border-bottom: 1px solid purple;
 }
@@ -61,6 +62,8 @@
 }
 
 .mt-footer {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 	text-align: center;
 }
 
