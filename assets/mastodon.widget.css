@@ -18,6 +18,7 @@
 
 .mt-header,
 .mt-footer {
+  border-radius: 5px;
 	padding: 10px 10px;
 }
 
