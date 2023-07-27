@@ -1,0 +1,37 @@
+name: Fetch Data
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 8 * * *'  # This line means the action will run everyday at 08:00 in the UK
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install beautifulsoup4 requests pandas
+
+      - name: Run bookwyrm scrape script
+        run: python _data/get_books.py
+
+      - name: Run inat api and processing scripts
+        run: |
+          python _data/update_inat_obs.py
+          python _data/update_inat_tax.py
+          python _data/process_inat.py
+        
+      - name: Commit and push
+        run: |
+          git add .
+          git config --global user.email "r.mcminds@gmail.com"
+          git config --global user.name "rmcminds"
+          git commit -am "Automated Actions book data update"
+          git push

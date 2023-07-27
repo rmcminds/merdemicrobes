@@ -72,6 +72,27 @@ layout: default
 
   <hr style="border-top: 1px solid #e1e4e8; border-right: none; border-bottom: none; border-left: none;">
   
+  <div style="padding-top:30px">
+    <h2>Ryan's most recent new taxa posted to iNaturalist</h2>
+    
+    <table>
+      {% for row in site.data.most_recent_new_taxa limit: 6 %}
+        {% if forloop.first %}
+          <tr>
+            <th>Taxon</th>
+            <th>Photo</th>
+          </tr>
+        {% endif %}
+        
+        <tr>
+          <th>{{ row["scientific_name"] }}<br>{{ row["common_name"] }}</th>
+          <th><a href="{{ row["url"] }}"><img src="{{ row["image_url"] }}"></a></th>
+        </tr>
+      {% endfor %}
+    </table>
+  </div>
+  
+  <!-- removing inat widget as long as i like my own replacement
   <div id="inat" style="padding-top:30px">
     <style type="text/css" media="screen">
       .inat-widget { font-family: Georgia, serif; padding: 10px; line-height: 1}
@@ -99,6 +120,7 @@ layout: default
         <strong><a href="https://www.inaturalist.org/observations/rmcminds">View Ryan's observations &raquo;</a></strong>
       </div>
     </div>
+    -->
 
     <div style="padding-top:20px"></div>
     <hr style="border-top: 1px solid #e1e4e8; border-right: none; border-bottom: none; border-left: none;">
