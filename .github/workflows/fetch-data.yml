@@ -26,7 +26,8 @@ jobs:
         run: |
           python _data/update_inat_obs.py
           python _data/update_inat_tax.py
-          sed 's/\\u/ u/g' _data/inat_taxonomy.json > inat_taxonomy.json
+          sed 's/\\u/ u/g' _data/inat_taxonomy.json > _data/inat_taxonomy2.json
+          mv _data/inat_taxonomy2.json _data/inat_taxonomy.json
           python _data/process_inat.py
         
       - name: Commit and push
