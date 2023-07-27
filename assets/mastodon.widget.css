@@ -10,6 +10,7 @@
 
 /* main container >>> */
 .mastodon-timeline {
+  border-radius: 5px;
 	box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
 	font-family:  'Noto Sans Japanese', "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, メイリオ, Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 	margin-bottom: 1em;
@@ -28,8 +29,8 @@
 }
 
 .mt-header {
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
 	font-weight: bold;
 	border-bottom: 1px solid purple;
 }
@@ -61,8 +62,8 @@
 }
 
 .mt-footer {
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
 	text-align: center;
 }
 
