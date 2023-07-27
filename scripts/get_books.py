@@ -19,7 +19,7 @@ for book in books[:5]:  # only take the first 5 books
     img_url = book.find('img', class_='book-cover')['src']
     data.append({'title': title, 'link': link, 'img_url': img_url, 'author': author})
 
-with open('assets/read.json', 'w') as f:
+with open('_data/read.json', 'w') as f:
     json.dump(data, f)
 
 
@@ -40,5 +40,5 @@ for book in books:
     img_url = book.find('img', class_='book-cover')['src']
     data.append({'title': title, 'link': link, 'img_url': img_url, 'author': author})
 
-with open('assets/reading.json', 'w') as f:
+with open('_data/reading.json', 'w') as f:
     json.dump(data, f)
