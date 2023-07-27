@@ -97,7 +97,7 @@ layout: default
               {% if row["quality_grade"] == 'research' %}<p>(ID confirmed)</p>{% endif %}
               {% if row["quality_grade"] == 'needs_id' %}<p>(ID not confirmed)</p>{% endif %}
           </td>
-          <td><a href="{{ row["url"] }}"><img src="{{ row["image_url"] }}" style="width: 100px"></a></td>
+          <td><a href="{{ row["url"] }}"><img src="{{ row["image_url"] }}" style="min-width: 100px; max-height: 200px"></a></td>
         </tr>
       {% endfor %}
     </table>
