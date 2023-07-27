@@ -29,6 +29,8 @@
 }
 
 .mt-header {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
 	font-weight: bold;
@@ -64,6 +66,8 @@
 .mt-footer {
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 	text-align: center;
 }
 
