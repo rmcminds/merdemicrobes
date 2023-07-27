@@ -312,8 +312,8 @@ MastodonApi.prototype.listStatuses = function() {
 
 		// stats (boosts + favourites counts) >>>
 		// data
-		var boostsCountIcon     = '<span class="toot-status-boosts">'     + this.boostsCountIcon     +":"+ status_.reblogs_count    + '</span>';
-		var favouritesCountIcon = '<span class="toot-status-favourites">' + this.favouritesCountIcon +":"+ status_.favourites_count + '</span>';
+		var boostsCountIcon     = '<span class="toot-status-boosts">'     + this.boostsCountIcon     +": "+ status_.reblogs_count    + '</span>';
+		var favouritesCountIcon = '<span class="toot-status-favourites">' + this.favouritesCountIcon +": "+ status_.favourites_count + '</span>';
 
 		// html nodes
 		var statusBar = $('<div class="toot-status">' +
