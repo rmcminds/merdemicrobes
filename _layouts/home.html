@@ -79,18 +79,21 @@ layout: default
     
     <table>
       {% for row in site.data.most_recent_new_taxa limit: 5 %}
+        <!-- don't need the header for now. will ultimately want to reformat this to use CSS grid instead of table.
         {% if forloop.first %}
           <tr>
             <th>Taxon</th>
             <th>Photo</th>
           </tr>
         {% endif %}
+        -->
         
         <tr>
-          <td><p><i>{{ row["scientific_name"] }}</i></p>
+          <td><p><i><a href="{{ row["url"] }}">{{ row["scientific_name"] }}</a></i></p>
               <p>{{ row["common_name"] }}</p>
               <p>{{ row["observed_on"] }}</p>
-              <p>({{ row["quality_grade"] }})</p>
+              {% if row["quality_grade"] == 'research' %}<p>(ID confirmed)</p>{% endif %}
+              {% if row["quality_grade"] == 'needs_id' %}<p>(ID not confirmed)</p>{% endif %}
           </td>
           <td><a href="{{ row["url"] }}"><img src="{{ row["image_url"] }}" style="width: 100px"></a></td>
         </tr>
