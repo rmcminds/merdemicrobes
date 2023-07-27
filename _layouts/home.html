@@ -72,7 +72,7 @@ layout: default
 
   <hr style="border-top: 1px solid #e1e4e8; border-right: none; border-bottom: none; border-left: none;">
   
-  <div style="padding-top:30px">
+  <div id="inat" style="padding-top:30px">
     <h2><a href='https://www.inaturalist.org/people/rmcminds'>iNaturalist</a></h2>
     <h3>Ryan's most recent taxonomic discoveries</h3>
     <p>(observations of taxa that he'd never before uploaded)</p>
@@ -101,131 +101,99 @@ layout: default
     </table>
   </div>
   
-  <!-- removing inat widget as long as i like my own replacement
-  <div id="inat" style="padding-top:30px">
-    <style type="text/css" media="screen">
-      .inat-widget { font-family: Georgia, serif; padding: 10px; line-height: 1}
-      .inat-widget-header {margin-bottom: 10px; padding-bottom: 20px}
-      .inat-widget td {vertical-align: top; padding-bottom: 10px;}
-      .inat-label { color: #888; }
-      .inat-meta { font-size: smaller; margin-top: 3px; line-height: 1.2;}
-      .inat-observation-body, .inat-user-body { padding-left: 10px; }
-      .inat-observation-image {text-align: center;}
-      .inat-observation-image, .inat-user-image { width: 48px; display: inline-block; }
-      .inat-observation-image img, .inat-user-image img { max-width: 48px; }
-      .inat-observation-image img { vertical-align: middle; }
-      .inat-widget-small .inat-observation-image { display:block; float: left; margin: 0 3px 3px 0; height:48px;}
-      .inat-label, .inat-value, .inat-user { font-family: "Trebuchet MS", Arial, sans-serif; }
-      .inat-user-body {vertical-align: middle;}
-      .inat-widget td.inat-user-body {vertical-align: middle;}
-      .inat-widget .inat-footer td.inat-value {vertical-align: middle; padding-left: 10px;}
-    </style>
-    <div class="inat-widget">
-        <div class="inat-widget-header">
-          <a href="https://www.inaturalist.org"><img alt="iNaturalist" src="https://www.inaturalist.org/assets/logo-small.png" /></a>  
-        </div>
-      <script type="text/javascript" charset="utf-8" src="https://www.inaturalist.org/observations/rmcminds.widget?layout=small&amp;limit=24&amp;order=desc&amp;order_by=created_at"></script>
-      <div style="padding-top: 20px">
-        <strong><a href="https://www.inaturalist.org/observations/rmcminds">View Ryan's observations &raquo;</a></strong>
-      </div>
-    </div>
-    -->
+  <div style="padding-top:20px"></div>
+  <hr style="border-top: 1px solid #e1e4e8; border-right: none; border-bottom: none; border-left: none;">
+  
+  <div style="padding-top:30px">
+    <h2>
+      <a href="https://bookwyrm.social/user/rmcminds/books/reading">Bookwyrm.social</a>
+    </h2>
+    <h3>
+      Ryan recently finished reading:
+    </h3>
+    <table id="read-books-table"></table>
+    <h3>
+      And is currently reading:
+    </h3>
+    <table id="reading-books-table"></table>
+    <script>
+      fetch('/assets/read.json')
+        .then(response => response.json())
+        .then(data => {
+          const table = document.getElementById('read-books-table');
 
-    <div style="padding-top:20px"></div>
-    <hr style="border-top: 1px solid #e1e4e8; border-right: none; border-bottom: none; border-left: none;">
-    
-    <div style="padding-top:30px">
-      <h2>
-        <a href="https://bookwyrm.social/user/rmcminds/books/reading">Bookwyrm.social</a>
-      </h2>
-      <h3>
-        Ryan recently finished reading:
-      </h3>
-      <table id="read-books-table"></table>
-      <h3>
-        And is currently reading:
-      </h3>
-      <table id="reading-books-table"></table>
-      <script>
-        fetch('/assets/read.json')
-          .then(response => response.json())
-          .then(data => {
-            const table = document.getElementById('read-books-table');
+          data.forEach(item => {
+              // Create new table row
+              const tableRow = document.createElement('tr');
 
-            data.forEach(item => {
-                // Create new table row
-                const tableRow = document.createElement('tr');
+              // Create table cell for title and link
+              const titleCell = document.createElement('td');
+              const link = document.createElement('a');
+              link.href = item.link;
+              link.innerText = item.title;
+              titleCell.appendChild(link);
+              tableRow.appendChild(titleCell);
 
-                // Create table cell for title and link
-                const titleCell = document.createElement('td');
-                const link = document.createElement('a');
-                link.href = item.link;
-                link.innerText = item.title;
-                titleCell.appendChild(link);
-                tableRow.appendChild(titleCell);
+              // Check if the book has a cover
+              if (item.img_url) {
+                  // Create table cell for cover image
+                  const imageCell = document.createElement('td');
+                  const imgElement = document.createElement('img');
+                  imgElement.src = item.img_url;
+                  imgElement.alt = `Cover of ${item.title}`;
+                  imgElement.style.width = '100px'; // adjust the size as needed
+                  imageCell.appendChild(imgElement);
+                  tableRow.appendChild(imageCell);
+              } else {
+                  // If no cover image, create an empty cell
+                  const emptyCell = document.createElement('td');
+                  tableRow.appendChild(emptyCell);
+              }
 
-                // Check if the book has a cover
-                if (item.img_url) {
-                    // Create table cell for cover image
-                    const imageCell = document.createElement('td');
-                    const imgElement = document.createElement('img');
-                    imgElement.src = item.img_url;
-                    imgElement.alt = `Cover of ${item.title}`;
-                    imgElement.style.width = '100px'; // adjust the size as needed
-                    imageCell.appendChild(imgElement);
-                    tableRow.appendChild(imageCell);
-                } else {
-                    // If no cover image, create an empty cell
-                    const emptyCell = document.createElement('td');
-                    tableRow.appendChild(emptyCell);
-                }
+              // Append table row to table
+              table.appendChild(tableRow);
+          });
+      })
+      .catch(console.error);
+      fetch('/assets/reading.json')
+        .then(response => response.json())
+        .then(data => {
+          const table = document.getElementById('reading-books-table');
 
-                // Append table row to table
-                table.appendChild(tableRow);
-            });
-        })
-        .catch(console.error);
-        fetch('/assets/reading.json')
-          .then(response => response.json())
-          .then(data => {
-            const table = document.getElementById('reading-books-table');
+          data.forEach(item => {
+              // Create new table row
+              const tableRow = document.createElement('tr');
 
-            data.forEach(item => {
-                // Create new table row
-                const tableRow = document.createElement('tr');
+              // Create table cell for title and link
+              const titleCell = document.createElement('td');
+              const link = document.createElement('a');
+              link.href = item.link;
+              link.innerText = item.title;
+              titleCell.appendChild(link);
+              tableRow.appendChild(titleCell);
 
-                // Create table cell for title and link
-                const titleCell = document.createElement('td');
-                const link = document.createElement('a');
-                link.href = item.link;
-                link.innerText = item.title;
-                titleCell.appendChild(link);
-                tableRow.appendChild(titleCell);
+              // Check if the book has a cover
+              if (item.img_url) {
+                  // Create table cell for cover image
+                  const imageCell = document.createElement('td');
+                  const imgElement = document.createElement('img');
+                  imgElement.src = item.img_url;
+                  imgElement.alt = `Cover of ${item.title}`;
+                  imgElement.style.width = '100px'; // adjust the size as needed
+                  imageCell.appendChild(imgElement);
+                  tableRow.appendChild(imageCell);
+              } else {
+                  // If no cover image, create an empty cell
+                  const emptyCell = document.createElement('td');
+                  tableRow.appendChild(emptyCell);
+              }
 
-                // Check if the book has a cover
-                if (item.img_url) {
-                    // Create table cell for cover image
-                    const imageCell = document.createElement('td');
-                    const imgElement = document.createElement('img');
-                    imgElement.src = item.img_url;
-                    imgElement.alt = `Cover of ${item.title}`;
-                    imgElement.style.width = '100px'; // adjust the size as needed
-                    imageCell.appendChild(imgElement);
-                    tableRow.appendChild(imageCell);
-                } else {
-                    // If no cover image, create an empty cell
-                    const emptyCell = document.createElement('td');
-                    tableRow.appendChild(emptyCell);
-                }
-
-                // Append table row to table
-                table.appendChild(tableRow);
-            });
-        })
-        .catch(console.error);
-      </script>
-    </div>
-    
+              // Append table row to table
+              table.appendChild(tableRow);
+          });
+      })
+      .catch(console.error);
+    </script>
   </div>
-
+  
 </div>
