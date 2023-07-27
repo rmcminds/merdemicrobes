@@ -34,6 +34,7 @@ layout: default
     <p style="padding-bottom: 20px" class="rss-subscribe">See <a href="/blog-archive/">more</a> or subscribe to blog updates <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
   {%- endif -%}
 
+  <!-- Add a break and then a section with social media posts -->
   <hr style="border-top: 1px solid #e1e4e8; border-right: none; border-bottom: none; border-left: none;">
 
   <!-- removing twitter widget as long as it's not functioning
@@ -70,8 +71,10 @@ layout: default
   </script>
   <div style="padding-top:30px"></div>
   <div id="myTimeline" class="mastodon-timeline mastodon-timeline-dark"></div>
+  
+  
+  <!-- Add a break and then a section with nature sightings data from iNaturalist -->
   <div style="padding-top:20px"></div>
-
   <hr style="border-top: 1px solid #e1e4e8; border-right: none; border-bottom: none; border-left: none;">
   
   <div id="inat" style="padding-top:30px">
@@ -103,6 +106,8 @@ layout: default
     </table>
   </div>
   
+  
+  <!-- Add a break and then a section with book data from bookwyrm.social -->
   <div style="padding-top:20px"></div>
   <hr style="border-top: 1px solid #e1e4e8; border-right: none; border-bottom: none; border-left: none;">
   
@@ -113,89 +118,29 @@ layout: default
     <h3>
       Ryan recently finished reading:
     </h3>
-    <table id="read-books-table"></table>
+    <table id="read-books-table">
+      {% for book in site.data.read %}
+        <tr>
+          <td><p><a href="{{ book.link }}">{{ book.title }}</a></p>
+              <p>{{ book.author }}</p>
+          </td>
+          <td><img src="{{ book.img_url }}" style="min-width: 100px; max-height: 200px"></td>
+        </tr>
+      {% endfor %}
+    </table>
     <h3>
       And is currently reading:
     </h3>
-    <table id="reading-books-table"></table>
-    <script>
-      fetch('/assets/read.json')
-        .then(response => response.json())
-        .then(data => {
-          const table = document.getElementById('read-books-table');
-
-          data.forEach(item => {
-              // Create new table row
-              const tableRow = document.createElement('tr');
-
-              // Create table cell for title and link
-              const titleCell = document.createElement('td');
-              const link = document.createElement('a');
-              link.href = item.link;
-              link.innerText = item.title;
-              titleCell.appendChild(link);
-              tableRow.appendChild(titleCell);
-
-              // Check if the book has a cover
-              if (item.img_url) {
-                  // Create table cell for cover image
-                  const imageCell = document.createElement('td');
-                  const imgElement = document.createElement('img');
-                  imgElement.src = item.img_url;
-                  imgElement.alt = `Cover of ${item.title}`;
-                  imgElement.style.width = '100px'; // adjust the size as needed
-                  imageCell.appendChild(imgElement);
-                  tableRow.appendChild(imageCell);
-              } else {
-                  // If no cover image, create an empty cell
-                  const emptyCell = document.createElement('td');
-                  tableRow.appendChild(emptyCell);
-              }
-
-              // Append table row to table
-              table.appendChild(tableRow);
-          });
-      })
-      .catch(console.error);
-      fetch('/assets/reading.json')
-        .then(response => response.json())
-        .then(data => {
-          const table = document.getElementById('reading-books-table');
-
-          data.forEach(item => {
-              // Create new table row
-              const tableRow = document.createElement('tr');
-
-              // Create table cell for title and link
-              const titleCell = document.createElement('td');
-              const link = document.createElement('a');
-              link.href = item.link;
-              link.innerText = item.title;
-              titleCell.appendChild(link);
-              tableRow.appendChild(titleCell);
-
-              // Check if the book has a cover
-              if (item.img_url) {
-                  // Create table cell for cover image
-                  const imageCell = document.createElement('td');
-                  const imgElement = document.createElement('img');
-                  imgElement.src = item.img_url;
-                  imgElement.alt = `Cover of ${item.title}`;
-                  imgElement.style.width = '100px'; // adjust the size as needed
-                  imageCell.appendChild(imgElement);
-                  tableRow.appendChild(imageCell);
-              } else {
-                  // If no cover image, create an empty cell
-                  const emptyCell = document.createElement('td');
-                  tableRow.appendChild(emptyCell);
-              }
-
-              // Append table row to table
-              table.appendChild(tableRow);
-          });
-      })
-      .catch(console.error);
-    </script>
+    <table id="reading-books-table">
+      {% for book in site.data.reading %}
+        <tr>
+          <td><p><a href="{{ book.link }}">{{ book.title }}</a></p>
+              <p>{{ book.author }}</p>
+          </td>
+          <td><img src="{{ book.img_url }}" style="min-width: 100px; max-height: 200px"></td>
+        </tr>
+      {% endfor %}
+    </table>
   </div>
   
 </div>
