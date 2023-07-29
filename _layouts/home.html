@@ -119,10 +119,12 @@ layout: default
       Ryan recently finished reading:
     </h3>
     <table id="read-books-table">
-      {% for book in site.data.read %}
+      {% for book in site.data.read limit: 5 %}
         <tr>
           <td><p><a href="{{ book.link }}">{{ book.title }}</a></p>
               <p>{{ book.author }}</p>
+              <p>Date finished: {{ book.date_finished }}</p>
+              <p>{{ book.rating }}</p>
           </td>
           <td style="text-align: center;"><img src="{{ book.img_url }}" style="min-width: 100px; max-height: 200px"></td>
         </tr>
@@ -132,7 +134,7 @@ layout: default
       And is currently reading:
     </h3>
     <table id="reading-books-table">
-      {% for book in site.data.reading %}
+      {% for book in site.data.reading limit: 5 %}
         <tr>
           <td><p><a href="{{ book.link }}">{{ book.title }}</a></p>
               <p>{{ book.author }}</p>

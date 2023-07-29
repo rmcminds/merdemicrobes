@@ -20,7 +20,10 @@ jobs:
         run: pip install beautifulsoup4 requests pandas
 
       - name: Run bookwyrm scrape script
-        run: python scripts/get_books.py
+        env:
+          bookwyrm_localname: ${{ secrets.bookwyrm_localname }}
+          bookwyrm_password: ${{ secrets.bookwyrm_password }}
+        run: python scripts/get_books.py "$bookwyrm_localname" "$bookwyrm_password"
 
       - name: Run inat api and processing scripts
         run: |
