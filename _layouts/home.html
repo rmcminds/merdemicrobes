@@ -39,7 +39,7 @@ layout: default
 
   <!-- removing twitter widget as long as it's not functioning
   <div id="twitter" style="padding-top:30px;padding-bottom:30px">
-    <a class="twitter-timeline" href="https://twitter.com/rmcminds?ref_src=twsrc%5Etfw">Tweets by Ryan</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <a class="twitter-timeline" href="https://twitter.com/rmcminds?ref_src=twsrc%5Etfw" target="_blank">Tweets by Ryan</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   </div>
 
   <hr style="border-top: 1px solid #e1e4e8; border-right: none; border-bottom: none; border-left: none;">
@@ -77,8 +77,8 @@ layout: default
   <div style="padding-top:20px"></div>
   <hr style="border-top: 1px solid #e1e4e8; border-right: none; border-bottom: none; border-left: none;">
   
-  <div id="inat" style="padding-top:30px">
-    <h2><a href='https://www.inaturalist.org/people/rmcminds'><img alt="iNaturalist" src="https://www.inaturalist.org/assets/logo-small.png" /></a></h2>
+  <div id="iNaturalist" style="padding-top:30px">
+    <h2><a href="https://www.inaturalist.org/people/rmcminds" target="_blank"><img alt="iNaturalist" src="https://www.inaturalist.org/assets/logo-small.png" /></a></h2>
     <h3>Ryan's most recent taxonomic discoveries</h3>
     <p>(observations of taxa that he'd never before uploaded)</p>
     
@@ -94,13 +94,13 @@ layout: default
         -->
         
         <tr>
-          <td><p><i><a href="{{ row["url"] }}">{{ row["scientific_name"] }}</a></i></p>
+          <td><p><i><a href="{{ row["url"] }}" target="_blank">{{ row["scientific_name"] }}</a></i></p>
               <p>{{ row["common_name"] }}</p>
               <p>{{ row["observed_on"] }}</p>
               {% if row["quality_grade"] == 'research' %}<p>(ID confirmed)</p>{% endif %}
               {% if row["quality_grade"] == 'needs_id' %}<p>(ID not confirmed)</p>{% endif %}
           </td>
-          <td style="text-align: center;"><a href="{{ row["url"] }}"><img src="{{ row["image_url"] }}" style="min-width: 100px; max-height: 200px"></a></td>
+          <td style="text-align: center;"><a href="{{ row["url"] }}" target="_blank"><img src="{{ row["image_url"] }}" style="min-width: 100px; max-height: 200px"></a></td>
         </tr>
       {% endfor %}
     </table>
@@ -111,32 +111,31 @@ layout: default
   <div style="padding-top:20px"></div>
   <hr style="border-top: 1px solid #e1e4e8; border-right: none; border-bottom: none; border-left: none;">
   
-  <div style="padding-top:30px">
+  <div id="Bookwyrm" style="padding-top:30px">
     <h2>
-      <a href="https://bookwyrm.social/user/rmcminds/books/reading">Bookwyrm.social</a>
+      <a href="https://bookwyrm.social/user/rmcminds" target="_blank">Bookwyrm.social</a>
     </h2>
     <h3>
-      Ryan recently finished reading:
+      Ryan recently <a href="https://bookwyrm.social/user/rmcminds/books/read" target="_blank">finished reading</a>:
     </h3>
     <table id="read-books-table">
       {% for book in site.data.read limit: 5 %}
         <tr>
-          <td><p><a href="{{ book.link }}">{{ book.title }}</a></p>
+          <td><p><a href="{{ book.link }}" target="_blank">{{ book.title }}</a></p>
               <p>{{ book.author }}</p>
-              <p>Date finished: {{ book.date_finished }}</p>
-              <p>{{ book.rating }}</p>
+              <p>Finished: {{ book.date_finished }} ({{ book.rating }})</p>
           </td>
           <td style="text-align: center;"><img src="{{ book.img_url }}" style="min-width: 100px; max-height: 200px"></td>
         </tr>
       {% endfor %}
     </table>
     <h3>
-      And is currently reading:
+      ...and is <a href="https://bookwyrm.social/user/rmcminds/books/reading" target="_blank">currently reading</a>:
     </h3>
     <table id="reading-books-table">
       {% for book in site.data.reading limit: 5 %}
         <tr>
-          <td><p><a href="{{ book.link }}">{{ book.title }}</a></p>
+          <td><p><a href="{{ book.link }}" target="_blank">{{ book.title }}</a></p>
               <p>{{ book.author }}</p>
           </td>
           <td style="text-align: center;"><img src="{{ book.img_url }}" style="min-width: 100px; max-height: 200px"></td>
