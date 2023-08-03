@@ -17,7 +17,7 @@ for taxon in taxa:
   taxa_dict[taxon['id']] = taxon['ancestor_ids']
 
 # simplify dataset by removing exact taxon duplicates
-obs_unique = obs.drop_duplicates(subset='taxon_id',keep='last').reset_index()
+obs_unique = obs.drop_duplicates(subset='taxon_id',keep='last').reset_index(drop=True)
 
 # check if unique taxa are actually first-timers, or if they are higher taxa for an earlier observation
 attempted = 0
