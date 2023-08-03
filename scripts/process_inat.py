@@ -34,7 +34,7 @@ while True:
   # if observation being tested is a taxon never before seen, add it to the output and increment the number of output records
   if obs_unique['taxon_id'][attempted] not in all_before:
   
-    final_obs = pd.concat([final_obs, obs_unique.truncate(before=attempted, after=attempted)])
+    final_obs = pd.concat([final_obs, obs_unique.truncate(before=attempted, after=attempted)], ignore_index = True)
     
     saved += 1
     
