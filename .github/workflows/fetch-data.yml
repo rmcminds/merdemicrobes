@@ -38,5 +38,4 @@ jobs:
           git add .
           git config --global user.email "r.mcminds@gmail.com"
           git config --global user.name "rmcminds"
-          git commit -am "Automated Actions book data update"
-          git push
+          git commit -am "Automated Actions book data update" && git push || echo "Nothing to push"
