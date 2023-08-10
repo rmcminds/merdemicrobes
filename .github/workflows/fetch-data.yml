@@ -2,7 +2,7 @@ name: Fetch Data
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 8 * * *'  # This line means the action will run everyday at 08:00 in the UK
+    - cron: '0 8 * * *'  # action runs everyday at 08:00 in the UK
 
 jobs:
   fetch:
@@ -19,23 +19,24 @@ jobs:
       - name: Install dependencies
         run: pip install beautifulsoup4 requests pandas
 
-      - name: Run bookwyrm scrape script
+      - name: Run Bookwyrm scrape script
         env:
           bookwyrm_localname: ${{ secrets.bookwyrm_localname }}
           bookwyrm_password: ${{ secrets.bookwyrm_password }}
         run: python scripts/get_books.py "$bookwyrm_localname" "$bookwyrm_password"
 
-      - name: Run inat api and processing scripts
+      - name: Run iNaturalist API and processing scripts
         run: |
-          python scripts/update_inat_obs.py
-          python scripts/update_inat_tax.py
-          sed 's/\\u/ u/g' _data/inat_taxonomy.json > _data/inat_taxonomy2.json
-          mv _data/inat_taxonomy2.json _data/inat_taxonomy.json
-          python scripts/process_inat.py
+          python scripts/update_inat_obs.py                                     # update observation database
+          python scripts/update_inat_tax.py                                     # update taxonomy database
+          sed 's/\\u/ u/g' _data/inat_taxonomy.json > _data/inat_taxonomy2.json # remove emojis from json
+          mv _data/inat_taxonomy2.json _data/inat_taxonomy.json                 # 
+          python scripts/process_inat.py                                        # find most recent new taxa
         
       - name: Commit and push
         run: |
           git add .
           git config --global user.email "r.mcminds@gmail.com"
           git config --global user.name "rmcminds"
-          git commit -am "Automated Actions book data update" && git push || echo "Nothing to push"
+          # don't try to push if there's no change (&&/|| syntax avoids exit code 1 causing report that workflow 'failed')
+          git commit -am "automated Github Actions data update" && git push || echo "nothing to push"
