@@ -28,7 +28,7 @@ Trust {the \|}scien{ce\|tists}!
 
 Ahh. That's safe.
 
-Wait, what science? Or which scientists? 
+Wait, what science? Or which scientists?<!--more-->
 
 The majority? Who did the counting? How do I trust the people who tell me what the majority is? Does the majority include scientists who are experts in the wrong topic?
 
