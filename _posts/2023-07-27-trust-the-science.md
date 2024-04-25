@@ -24,7 +24,7 @@ Trust *the* science?
 
 Trust the scien*tists*?
 
-Trust {the |}scien{ce|tists}!
+Trust {the \|}scien{ce\|tists}!
 
 Ahh. That's safe.
 
