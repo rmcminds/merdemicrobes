@@ -5,7 +5,7 @@ import os.path
 import pandas as pd
 
 # read in existing database
-obs = pd.read_csv('_data/inat-observations-345649-with-updates.csv')
+obs = pd.read_csv('_data/inat-observations-425614-with-updates.csv')
 
 unique_taxa = obs['taxon_id'].unique()
 

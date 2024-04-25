@@ -3,7 +3,7 @@ import json
 
 number_keep = 20
 
-obs = pd.read_csv('_data/inat-observations-345649-with-updates.csv')
+obs = pd.read_csv('_data/inat-observations-425614-with-updates.csv')
 
 obs = obs.sort_values(by=['time_observed_at'], ascending=False)
 

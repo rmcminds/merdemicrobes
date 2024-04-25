@@ -4,7 +4,7 @@ from io import StringIO
 import pandas as pd
 
 # find dates corresponding to latest updates and observations in existing dataset
-df = pd.read_csv('_data/inat-observations-345649-with-updates.csv')
+df = pd.read_csv('_data/inat-observations-425614-with-updates.csv')
 
 df_latest = pd.to_datetime(df['updated_at'], format='mixed').max().isoformat()
 
@@ -65,5 +65,5 @@ if len(del_observations) > 0:
   new_df = new_df[~new_df['id'].isin(del_observations)]
 
 # save updated database
-new_df.to_csv('_data/inat-observations-345649-with-updates.csv', index=False)
+new_df.to_csv('_data/inat-observations-425614-with-updates.csv', index=False)
 
