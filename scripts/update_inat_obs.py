@@ -6,7 +6,7 @@ import pandas as pd
 # find dates corresponding to latest updates and observations in existing dataset
 df = pd.read_csv('_data/inat-observations-345649-with-updates.csv')
 
-df_latest = pd.to_datetime(df['updated_at'], format='mixed').dt.date.max()
+df_latest = pd.to_datetime(df['updated_at'], format='mixed').max().isoformat()
 
 ## get new observations
 
