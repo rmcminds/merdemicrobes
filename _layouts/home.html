@@ -79,7 +79,7 @@ layout: default
     <h3>Ryan's most recent taxonomic discoveries</h3>
     <p>(observations of taxa that he'd never before uploaded)</p>
 
-    <div style="max-height:600;overflow-y:scroll">
+    <div style="height:600;overflow-y:scroll">
       <table>
         {% for row in site.data.most_recent_new_taxa limit: 5 %}
           <!-- don't need the header for now. will ultimately want to reformat this to use CSS grid instead of table.
@@ -117,7 +117,7 @@ layout: default
     <h3>
       Ryan recently <a href="https://bookwyrm.social/user/rmcminds/books/read?sort=-finish_date" target="_blank">finished reading</a>:
     </h3>
-    <div style="max-height:600;overflow-y:scroll">
+    <div style="height:600;overflow-y:scroll">
       <table id="read-books-table">
         {% for book in site.data.read limit: 5 %}
           <tr>
@@ -134,7 +134,7 @@ layout: default
     <h3>
       ...and is <a href="https://bookwyrm.social/user/rmcminds/books/reading?sort=-start_date" target="_blank">currently reading</a>:
     </h3>
-    <div style="max-height:600;overflow-y:scroll">
+    <div style="height:600;overflow-y:scroll">
       <table id="reading-books-table">
         {% for book in site.data.reading limit: 5 %}
           <tr>
