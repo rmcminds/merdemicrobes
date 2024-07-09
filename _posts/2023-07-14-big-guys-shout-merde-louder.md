@@ -25,4 +25,4 @@ This one was quite a departure from my previous expertise. I had to learn a few 
 
 Let me know if you have any thoughts on the paper!
 
-Update 2024-07-09: We finally got our paper accepted and published at the Proceedings of the Royal Society B ([ProcB](https://royalsocietypublishing.org/doi/full/10.1098/rspb.2024.0535). I'm very happy to finally have published a paper that can be cited as McMinds *et al*. And in a pretty good journal, too! (Not that we *should* be focusing on such things...
+Update 2024-07-09: We finally got our paper accepted and published at the Proceedings of the Royal Society B ([ProcB](https://royalsocietypublishing.org/doi/full/10.1098/rspb.2024.0535)). I'm very happy to finally have published a paper that can be cited as McMinds *et al*. And in a pretty good journal, too! (Not that we *should* be focusing on such things...)
