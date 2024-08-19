@@ -36,7 +36,7 @@ jobs:
       - name: Commit and push
         run: |
           git add .
-          git config --global user.email "r.mcminds@gmail.com"
-          git config --global user.name "rmcminds"
+          git config --global user.email "github-actions[bot]"
+          git config --global user.name "github-actions[bot]@users.noreply.github.com"
           # don't try to push if there's no change (&&/|| syntax avoids exit code 1 causing report that workflow 'failed')
           git commit -am "automated Github Actions data update" && git push || echo "nothing to push"
