@@ -47,7 +47,7 @@ include:
   - _pages
 
 minima:
-  skin: auto
+  skin: classic
   social_links:
     - { platform: github, user_url: "https://github.com/rmcminds" }
     - { platform: google_scholar, user_url: "https://scholar.google.com/citations?user=y0hlXg4AAAAJ&hl=en" }
