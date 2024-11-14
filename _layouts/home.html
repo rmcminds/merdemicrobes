@@ -19,7 +19,7 @@ layout: base
     <h2 class="post-list-heading">{{ page.list_title | default: "Latest Blog Posts" }}</h2>
     <p>See categories and tags in the <a href="/blog-archive/">blog archive</a></p>
     <hr style="border-top: 1px solid #e1e4e8; border-right: none; border-bottom: none; border-left: none;">
-    <div style="padding-top:30px;"></div>
+    <div style="padding-top:20px;"></div>
     <ul class="post-list">
       {%- for post in posts limit:5 -%}
       <li>
@@ -32,12 +32,13 @@ layout: base
         </h3>
         {%- if site.show_excerpts -%}
           {{ post.excerpt }}
+          <a class="post-link" href="{{ post.url | relative_url }}">...read more</a>
         {%- endif -%}
         <hr style="border-top: 1px solid #e1e4e8; border-right: none; border-bottom: none; border-left: none;">
       </li>
       {%- endfor -%}
     </ul>
-    <p style="padding-bottom: 20px" class="rss-subscribe">See <a href="/blog-archive/">more</a> or subscribe to blog updates <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+    <p style="padding-bottom: 15px" class="rss-subscribe">See <a href="/blog-archive/">more</a> or subscribe to blog updates <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
     
     {% if site.paginate %}
       <div class="pager">
@@ -65,7 +66,7 @@ layout: base
   <!-- Add a break and then a section with nature sightings data from iNaturalist -->
   <hr style="border-top: 1px solid #e1e4e8; border-right: none; border-bottom: none; border-left: none;">
   
-  <div id="iNaturalist" style="padding-top:30px">
+  <div id="iNaturalist" style="padding-top:20px">
     <h2><a href="https://www.inaturalist.org/people/rmcminds" target="_blank"><img alt="iNaturalist" src="https://www.inaturalist.org/assets/logo-small.png" /></a></h2>
     <h3>Ryan's most recent taxonomic discoveries</h3>
     <p><small>(observations of taxa that he'd never before uploaded)</small></p>
