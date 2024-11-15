@@ -31,7 +31,7 @@ layout: base
         </h3>
         {%- if site.show_excerpts -%}
           {{ post.excerpt }}
-          <p><a class="post-link" href="{{ post.url | relative_url }}">...read more</a></p>
+          <p><a href="{{ post.url | relative_url }}">...read more</a></p>
         {%- endif -%}
         <hr style="border-top: 1px solid #e1e4e8; border-right: none; border-bottom: none; border-left: none;">
       </li>
@@ -65,7 +65,7 @@ layout: base
   <!-- Add a break and then a section with nature sightings data from iNaturalist -->
   <hr style="border-top: 1px solid #e1e4e8; border-right: none; border-bottom: none; border-left: none;">
   
-  <div id="iNaturalist" style="padding-top:20px">
+  <div id="iNaturalist" style="padding-top:0px">
     <h2><a href="https://www.inaturalist.org/people/rmcminds" target="_blank"><img alt="iNaturalist" src="https://www.inaturalist.org/assets/logo-small.png" /></a></h2>
     <h3>Ryan's most recent taxonomic discoveries</h3>
     <p><small>(observations of taxa that he'd never before uploaded)</small></p>
@@ -101,7 +101,7 @@ layout: base
   <div style="padding-top:20px"></div>
   <hr style="border-top: 1px solid #e1e4e8; border-right: none; border-bottom: none; border-left: none;">
   
-  <div id="Bookwyrm" style="padding-top:30px">
+  <div id="Bookwyrm" style="padding-top:20px">
     <h2>
       <a href="https://bookwyrm.social/user/rmcminds" target="_blank">Bookwyrm.social</a>
     </h2>
