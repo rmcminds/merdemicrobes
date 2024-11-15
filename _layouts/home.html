@@ -30,7 +30,8 @@ layout: base
           </a>
         </h3>
         {%- if site.show_excerpts -%}
-          <span>{{ post.excerpt }} <a class="post-link" href="{{ post.url | relative_url }}">...read more</a></span>
+          {{ post.excerpt }}
+          <p><a class="post-link" href="{{ post.url | relative_url }}">...read more</a></p>
         {%- endif -%}
         <hr style="border-top: 1px solid #e1e4e8; border-right: none; border-bottom: none; border-left: none;">
       </li>
