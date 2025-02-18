@@ -49,10 +49,18 @@ include:
 minima:
   skin: classic
   social_links:
-    - { platform: github, user_url: "https://github.com/rmcminds" }
-    - { platform: google_scholar, user_url: "https://scholar.google.com/citations?user=y0hlXg4AAAAJ&hl=en" }
-    - { platform: bluesky, user_url: "https://bsky.app/profile/rmcminds.bsky.social" }
-    - { platform: mastodon, user_url: "https://mastodon.social/@rmcminds" }
+    - title: github
+      icon: github
+      url: "https://github.com/rmcminds"
+    - title: google scholar
+      icon: google_scholar
+      url: "https://scholar.google.com/citations?user=y0hlXg4AAAAJ&hl=en"
+    - title: bluesky
+      icon: bluesky
+      url: "https://bsky.app/profile/rmcminds.bsky.social"
+    - title: mastodon
+      icon: mastodon
+      url: "https://mastodon.social/@rmcminds"
 
 mastodon:
 - username: rmcminds
