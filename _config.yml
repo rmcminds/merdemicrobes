@@ -53,7 +53,7 @@ minima:
       icon: github
       url: "https://github.com/rmcminds"
     - title: google scholar
-      icon: google_scholar
+      icon: google-scholar
       url: "https://scholar.google.com/citations?user=y0hlXg4AAAAJ&hl=en"
     - title: bluesky
       icon: bluesky
