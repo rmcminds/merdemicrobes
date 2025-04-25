@@ -32,7 +32,7 @@ disqus:
   
 # Build settings
 #theme: minima
-remote_theme: jekyll/minima
+remote_theme: jekyll/minima@5ce4006d175e6e5278bb63a0aad1a85e3bf2370b
 
 plugins:
   - jekyll-feed
