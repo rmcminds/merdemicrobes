@@ -43,5 +43,3 @@ It doesn't help to call people anti-science because they don't trust your person
 If we're frustrated at the fact that people don't trust us, we have only ourselves to blame. We need to make individual connections with people. We need to be out in the community earning trust for ourselves, not relying on our associations with institutions.
 
 I haven't done a good job with this at all, for a while. Some day, I will have the energy to begin again.
-
-Note: I wrote most of this on July 27, 2023, and then apparently got distracted and forgot about it. So I just finished it up almost a year later. Not 100% sure I went in the direction I originally intended - but I didn't disagree with anything I had written then...
