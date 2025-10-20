@@ -19,11 +19,12 @@ jobs:
       - name: Install dependencies
         run: pip install beautifulsoup4 requests pandas
 
-      - name: Run Bookwyrm scrape script
-        env:
-          bookwyrm_localname: ${{ secrets.bookwyrm_localname }}
-          bookwyrm_password: ${{ secrets.bookwyrm_password }}
-        #run: python scripts/get_books.py "$bookwyrm_localname" "$bookwyrm_password" # dont run until fixed
+      # dont run until fixed
+      #- name: Run Bookwyrm scrape script
+      #  env:
+      #    bookwyrm_localname: ${{ secrets.bookwyrm_localname }}
+      #    bookwyrm_password: ${{ secrets.bookwyrm_password }}
+      #  run: python scripts/get_books.py "$bookwyrm_localname" "$bookwyrm_password"
 
       - name: Run iNaturalist API and processing scripts
         run: |
