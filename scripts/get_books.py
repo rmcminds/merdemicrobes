@@ -26,7 +26,7 @@ for book in read_books:
     title = title_link.text
     link = "https://bookwyrm.social" + title_link['href']
     author = book.find('td', {'data-title': 'Author'}).find('a').text
-    date_finished = book.find('td', {'data-title': 'Started'}).nextSibling.text.strip('\n ')
+    date_finished = book.find('td', {'data-title': 'Started'}).findNext('td').contents[0].strip('\n ')
     rating = book.find('td', {'data-title': 'Rating'}).text.strip('\n ')
     img_url = book.find('img', class_='book-cover')['src']
     data.append({
