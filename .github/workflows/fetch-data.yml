@@ -23,7 +23,7 @@ jobs:
         env:
           bookwyrm_localname: ${{ secrets.bookwyrm_localname }}
           bookwyrm_password: ${{ secrets.bookwyrm_password }}
-        run: python scripts/get_books.py "$bookwyrm_localname" "$bookwyrm_password"
+        #run: python scripts/get_books.py "$bookwyrm_localname" "$bookwyrm_password" # dont run until fixed
 
       - name: Run iNaturalist API and processing scripts
         run: |
