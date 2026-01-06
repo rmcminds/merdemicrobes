@@ -8,7 +8,7 @@ reading_url = 'https://bookwyrm.social/user/rmcminds/books/reading?sort=-start_d
 login_url = 'https://bookwyrm.social/login/'
 
 payload = {
-  'username': sys.argv[1],
+  'localname': sys.argv[1],
   'password': sys.argv[2],
 }
 
