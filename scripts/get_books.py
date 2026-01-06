@@ -5,18 +5,34 @@ import json
 
 read_url = 'https://bookwyrm.social/user/rmcminds/books/read?sort=-finish_date'
 reading_url = 'https://bookwyrm.social/user/rmcminds/books/reading?sort=-start_date'
+login_url = 'https://bookwyrm.social/login/'
 
 payload = {
-    'localname': sys.argv[1],
-    'password': sys.argv[2]
+  'username': sys.argv[1],
+  'password': sys.argv[2],
 }
 
-# log in and retrieve html from both read and reading pages
 with requests.Session() as s:
-    payload['csrfmiddlewaretoken'] = s.get('https://bookwyrm.social/').cookies['csrftoken']
-    p = s.post('https://bookwyrm.social/login?next=/', data=payload)
-    read_books_page = s.get(read_url)
-    reading_books_page = s.get(reading_url)
+  # 1. Get login page to set CSRF correctly
+  login_page = s.get(login_url)
+  csrf = login_page.cookies.get('csrftoken')
+
+  payload['csrfmiddlewaretoken'] = csrf
+
+  # 2. POST with Referer header
+  r = s.post(
+    login_url,
+    data=payload,
+    headers={'Referer': login_url},
+    allow_redirects=True
+  )
+
+  # 3. Sanity check: authenticated navbar exists
+  if b'Log out' not in r.content:
+    raise RuntimeError('Authentication failed')
+
+  read_books_page = s.get(read_url)
+  reading_books_page = s.get(reading_url)
 
 # parse read books html
 read_books = BeautifulSoup(read_books_page.content, 'html.parser').find_all('tr', class_='book-preview')
