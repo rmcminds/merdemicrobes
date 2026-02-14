@@ -1,6 +1,154 @@
 // Placeholder to allow defining custom styles that override everything else.
 // (Use `_sass/minima/custom-variables.scss` to override variable defaults)
 
+// Universal section styling - applies to all pages
+.section-heading {
+  font-size: 2em;
+  font-weight: 600;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+  border-bottom: 2px solid #e1e4e8;
+  padding-bottom: 0.5rem;
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+    
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  
+  img {
+    vertical-align: middle;
+    height: 1.2em;
+  }
+}
+
+.subsection-heading {
+  font-size: 1.4em;
+  font-weight: 500;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #24292e;
+}
+
+.section-break {
+  border: none;
+  border-top: 1px solid #e1e4e8;
+  margin: 2.5rem 0;
+}
+
+.section-spacing {
+  margin-top: 2rem;
+}
+
+// Apply section heading styles to specific elements on home page
+.home {
+  > h2, #iNaturalist > h2, #Bookwyrm > h2 {
+    @extend .section-heading;
+  }
+  
+  #iNaturalist > h3, #Bookwyrm > h3 {
+    @extend .subsection-heading;
+  }
+}
+
+// Post list heading styling (used on home and archive pages)
+.post-list-heading {
+  @extend .section-heading;
+}
+
+// Archive page specific styling
+.archive-section.section-spacing {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  margin-top: 0;
+}
+
+.category-head {
+  font-size: 1.2em;
+  font-weight: 500;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #24292e;
+}
+
+// Tags section styling
+.tags-container {
+  margin-top: 1.5rem;
+}
+
+.tag-item {
+  background-color: #f6f8fa;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  padding: 8px 12px;
+  margin: 6px 0;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  
+  &:hover {
+    background-color: #e7edf3;
+    border-color: #b3b9bf;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  }
+  
+  summary {
+    font-weight: 500;
+    color: #24292e;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    &::-webkit-details-marker {
+      display: none;
+    }
+    
+    &::before {
+      content: '▶';
+      display: inline-block;
+      margin-right: 8px;
+      font-size: 0.7em;
+      transition: transform 0.2s ease;
+      color: #57606a;
+    }
+  }
+  
+  &[open] > summary::before {
+    transform: rotate(90deg);
+  }
+  
+  .tag-count {
+    font-size: 0.9em;
+    color: #57606a;
+    font-weight: normal;
+  }
+  
+  .tag-posts {
+    background-color: white;
+    border-radius: 4px;
+    padding: 12px;
+    margin-top: 8px;
+    border: 1px solid #e7edf3;
+  }
+}
+
+// Book rating styling
+.book-rating {
+  color: #f4b400;
+  font-size: 1.1em;
+  letter-spacing: 1px;
+  
+  .no-rating {
+    color: #6a737d;
+    font-size: 0.9em;
+    font-style: italic;
+  }
+}
+
 // Scrollable container for tables
 .scrollable-table-container {
   border: 1px solid #e1e4e8;

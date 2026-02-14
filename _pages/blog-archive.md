@@ -6,9 +6,9 @@ permalink: /blog-archive/
   
 <link rel="stylesheet" href="/assets/archive.css" />
 
-<hr style="border-top: 1px solid #e1e4e8; border-right: none; border-bottom: none; border-left: none;">
-<div id="categories" style="padding-top:30px; padding-bottom:30px">
-  <h3>Categories</h3>
+<hr class="section-break">
+<div id="categories" class="archive-section section-spacing">
+  <h2 class="section-heading">Categories</h2>
   {% assign categories = "" | split:"" %}
   {% for c in site.categories %}
     {% assign categories = categories | push: c[0] %}
@@ -31,25 +31,24 @@ permalink: /blog-archive/
   {% endfor %}
 </div>
 
-<hr style="border-top: 1px solid #e1e4e8; border-right: none; border-bottom: none; border-left: none;">
-<div style="padding-top:30px; padding-bottom:30px">
-  <details>
-    <summary><h3>Tags</h3></summary>
+<hr class="section-break">
+<div class="archive-section section-spacing">
+  <details open>
+    <summary><h2 class="section-heading">Tags</h2></summary>
     
-    <div id="tags" style="margin:5px">
+    <div id="tags" class="tags-container">
       {% assign tags = "" | split:"" %}
       {% for t in site.tags %}
         {% assign tags = tags | push: t[0] %}
       {% endfor %}
       {% assign tags_sorted = tags | sort_natural %}
       {% for tag in tags_sorted %}
-        <div class="archive-group" style="background-color: #e1e4e8; border-radius: 5px; padding: 5px; margin-top: 5px">
-          <div id="#{{ tag | slugify }}"></div>
-          
-          <details>
-            <summary>{{ tag }} ({{site.tags[tag].size}} post{%- if site.tags[tag].size > 1 -%}s{%- endif -%})</summary>
-    
-            <div style="background-color: white; border-radius: 5px; padding-left: 5px">
+        <details class="tag-item">
+          <summary>
+            <span>{{ tag }} <span class="tag-count">({{site.tags[tag].size}} post{%- if site.tags[tag].size > 1 -%}s{%- endif -%})</span></span>
+          </summary>
+   
+          <div class="tag-posts">
             <a name="{{ tag | slugify }}"></a>
             {% for post in site.tags[tag] %}
             <article class="archive-item">
@@ -58,19 +57,17 @@ permalink: /blog-archive/
             </article>
           
             {% endfor %}
-            </div>
-          </details>
-          
-        </div>
+          </div>
+        </details>
       {% endfor %}
     </div>
     
   </details> 
 </div>
 
-<hr style="border-top: 1px solid #e1e4e8; border-right: none; border-bottom: none; border-left: none;">
-<div id="chronological" style="padding-top:30px">
-  <h3>All posts (chronological)</h3>
+<hr class="section-break">
+<div id="chronological" class="archive-section section-spacing">
+  <h2 class="section-heading">All posts (chronological)</h2>
   <ul class="post-list">
     {%- for post in site.posts -%}
     <li>
@@ -84,7 +81,7 @@ permalink: /blog-archive/
       {%- if site.show_excerpts -%}
         {{ post.excerpt }}
       {%- endif -%}
-      <hr style="border-top: 1px solid #e1e4e8; border-right: none; border-bottom: none; border-left: none;">
+      <hr class="section-break">
     </li>
     {%- endfor -%}
   </ul>
