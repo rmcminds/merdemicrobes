@@ -42,7 +42,7 @@ permalink: /blog-archive/
     {% comment %} Create array of tags with their counts for sorting {% endcomment %}
     {% assign tag_array = "" | split: "" %}
     {% for t in site.tags %}
-      {% comment %} Zero-pad count to 5 digits for correct numerical sorting {% endcomment %}
+      {% comment %} Zero-pad count to 5 digits for correct numerical sorting (handles up to 99,999 posts per tag) {% endcomment %}
       {% assign count_padded = "" %}
       {% assign count_str = t[1].size | append: "" %}
       {% assign padding_needed = 5 | minus: count_str.size %}
@@ -86,7 +86,7 @@ permalink: /blog-archive/
     {% if sorted_tags.size > top_tags_count %}
       <details class="more-tags-wrapper">
         <summary class="more-tags-summary">
-          <span class="more-tags-text">Show {{ sorted_tags.size | minus: top_tags_count }} more tags...</span>
+          <span class="more-tags-text">Show {{ sorted_tags.size | minus: top_tags_count }} more tags…</span>
         </summary>
         
         <div class="more-tags-content">
