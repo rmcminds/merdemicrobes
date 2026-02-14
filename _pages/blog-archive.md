@@ -6,9 +6,9 @@ permalink: /blog-archive/
   
 <link rel="stylesheet" href="/assets/archive.css" />
 
-<hr style="border-top: 1px solid #e1e4e8; border-right: none; border-bottom: none; border-left: none;">
-<div id="categories" style="padding-top:30px; padding-bottom:30px">
-  <h3>Categories</h3>
+<hr class="section-break">
+<div id="categories" class="archive-section section-spacing">
+  <h2 class="section-heading">Categories</h2>
   {% assign categories = "" | split:"" %}
   {% for c in site.categories %}
     {% assign categories = categories | push: c[0] %}
@@ -31,10 +31,10 @@ permalink: /blog-archive/
   {% endfor %}
 </div>
 
-<hr style="border-top: 1px solid #e1e4e8; border-right: none; border-bottom: none; border-left: none;">
-<div style="padding-top:30px; padding-bottom:30px">
+<hr class="section-break">
+<div class="archive-section section-spacing">
   <details>
-    <summary><h3>Tags</h3></summary>
+    <summary><h2 class="section-heading">Tags</h2></summary>
     
     <div id="tags" style="margin:5px">
       {% assign tags = "" | split:"" %}
@@ -68,9 +68,9 @@ permalink: /blog-archive/
   </details> 
 </div>
 
-<hr style="border-top: 1px solid #e1e4e8; border-right: none; border-bottom: none; border-left: none;">
-<div id="chronological" style="padding-top:30px">
-  <h3>All posts (chronological)</h3>
+<hr class="section-break">
+<div id="chronological" class="archive-section section-spacing">
+  <h2 class="section-heading">All posts (chronological)</h2>
   <ul class="post-list">
     {%- for post in site.posts -%}
     <li>
@@ -84,7 +84,7 @@ permalink: /blog-archive/
       {%- if site.show_excerpts -%}
         {{ post.excerpt }}
       {%- endif -%}
-      <hr style="border-top: 1px solid #e1e4e8; border-right: none; border-bottom: none; border-left: none;">
+      <hr class="section-break">
     </li>
     {%- endfor -%}
   </ul>
