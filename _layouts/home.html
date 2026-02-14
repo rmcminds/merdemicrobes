@@ -70,7 +70,7 @@ layout: base
     <h3>Ryan's most recent taxonomic discoveries</h3>
     <p><small>(observations of taxa that he'd never before uploaded)</small></p>
 
-    <div style="border:1px solid #e1e4e8;max-height:600px;overflow-y:scroll">
+    <div class="scrollable-table-container">
       <table>
         {% for row in site.data.most_recent_new_taxa limit: 20 %}
           <!-- don't need the header for now. will ultimately want to reformat this to use CSS grid instead of table.
@@ -83,13 +83,14 @@ layout: base
           -->
           
           <tr>
-            <td><p><i><a href="{{ row["url"] }}" target="_blank">{{ row["scientific_name"] }}</a></i></p>
-                <p>{{ row["common_name"] }}</p>
-                <p>{{ row["observed_on"] }}</p>
-                {% if row["quality_grade"] == 'research' %}<p>ID confirmed</p>{% endif %}
-                {% if row["quality_grade"] == 'needs_id' %}<a href="{{ row["url"] }}" target="_blank" style="color:#8B0000"><p>Help me confirm this ID or suggest another!</p></a>{% endif %}
+            <td>
+              <p><i><a href="{{ row["url"] }}" target="_blank">{{ row["scientific_name"] }}</a></i></p>
+              <p>{{ row["common_name"] }}</p>
+              <p>{{ row["observed_on"] }}</p>
+              {% if row["quality_grade"] == 'research' %}<p>✓ ID confirmed</p>{% endif %}
+              {% if row["quality_grade"] == 'needs_id' %}<p><a href="{{ row["url"] }}" target="_blank" class="needs-id-warning">⚠ Help me confirm this ID or suggest another!</a></p>{% endif %}
             </td>
-            <td style="text-align: center;"><a href="{{ row["url"] }}" target="_blank"><img src="{{ row["image_url"] }}" style="min-width: 100px; max-height: 200px"></a></td>
+            <td><a href="{{ row["url"] }}" target="_blank"><img src="{{ row["image_url"] }}" alt="{{ row["scientific_name"] }}"></a></td>
           </tr>
         {% endfor %}
       </table>
@@ -108,16 +109,17 @@ layout: base
     <h3>
       Ryan recently <a href="https://bookwyrm.social/user/rmcminds/books/read?sort=-finish_date" target="_blank">finished reading</a>:
     </h3>
-    <div style="border:1px solid #e1e4e8;max-height:600px;overflow-y:scroll">
+    <div class="scrollable-table-container">
       <table id="read-books-table">
         {% for book in site.data.read limit: 10 %}
           <tr>
-            <td><p><a href="{{ book.link }}" target="_blank">{{ book.title }}</a></p>
-                <p>{{ book.author }}</p>
-                <p>Finished {{ book.date_finished }}</p>
-                <p>{{ book.rating }}</p>
+            <td>
+              <p><a href="{{ book.link }}" target="_blank">{{ book.title }}</a></p>
+              <p>{{ book.author }}</p>
+              <p>Finished {{ book.date_finished }}</p>
+              <p>{{ book.rating }}</p>
             </td>
-            <td style="text-align: center;"><img src="{{ book.img_url }}" style="min-width: 100px; max-height: 200px"></td>
+            <td><img src="{{ book.img_url }}" alt="{{ book.title }} cover"></td>
           </tr>
         {% endfor %}
       </table>
@@ -126,14 +128,15 @@ layout: base
     <h3>
       ...and is <a href="https://bookwyrm.social/user/rmcminds/books/reading?sort=-start_date" target="_blank">currently reading</a>:
     </h3>
-    <div style="border:1px solid #e1e4e8;max-height:600px;overflow-y:scroll">
+    <div class="scrollable-table-container">
       <table id="reading-books-table">
         {% for book in site.data.reading limit: 10 %}
           <tr>
-            <td><p><a href="{{ book.link }}" target="_blank">{{ book.title }}</a></p>
-                <p>{{ book.author }}</p>
+            <td>
+              <p><a href="{{ book.link }}" target="_blank">{{ book.title }}</a></p>
+              <p>{{ book.author }}</p>
             </td>
-            <td style="text-align: center;"><img src="{{ book.img_url }}" style="min-width: 100px; max-height: 200px"></td>
+            <td><img src="{{ book.img_url }}" alt="{{ book.title }} cover"></td>
           </tr>
         {% endfor %}
       </table>
