@@ -33,19 +33,29 @@ permalink: /blog-archive/
 
 <hr class="section-break">
 <div class="archive-section section-spacing">
-  <details open>
-    <summary><h2 class="section-heading">Tags</h2></summary>
+  <h2 class="section-heading">Tags</h2>
+  
+  <div id="tags" class="tags-container">
+    {% comment %} Create array of tags with their counts for sorting {% endcomment %}
+    {% assign tag_array = "" | split: "" %}
+    {% for t in site.tags %}
+      {% assign tag_item = t[0] | append: "|" | append: t[1].size %}
+      {% assign tag_array = tag_array | push: tag_item %}
+    {% endfor %}
     
-    <div id="tags" class="tags-container">
-      {% assign tags = "" | split:"" %}
-      {% for t in site.tags %}
-        {% assign tags = tags | push: t[0] %}
-      {% endfor %}
-      {% assign tags_sorted = tags | sort_natural %}
-      {% for tag in tags_sorted %}
+    {% comment %} Sort tags by count (we'll reverse later for descending order) {% endcomment %}
+    {% assign sorted_tags = tag_array | sort %}
+    {% assign sorted_tags = sorted_tags | reverse %}
+    
+    {% comment %} Display top 3 most common tags (always visible) {% endcomment %}
+    {% for i in (0..2) %}
+      {% if sorted_tags[i] %}
+        {% assign tag_parts = sorted_tags[i] | split: "|" %}
+        {% assign tag = tag_parts[0] %}
+        {% assign count = tag_parts[1] %}
         <details class="tag-item">
           <summary>
-            <span>{{ tag }} <span class="tag-count">({{site.tags[tag].size}} post{%- if site.tags[tag].size > 1 -%}s{%- endif -%})</span></span>
+            <span>{{ tag }} <span class="tag-count">({{ count }} post{%- if count > "1" -%}s{%- endif -%})</span></span>
           </summary>
    
           <div class="tag-posts">
@@ -55,14 +65,46 @@ permalink: /blog-archive/
               {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
               <a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a><span class="post-meta"> {{ post.date | date: date_format }}</span>
             </article>
-          
             {% endfor %}
           </div>
         </details>
-      {% endfor %}
-    </div>
+      {% endif %}
+    {% endfor %}
     
-  </details> 
+    {% comment %} Collapsible section for remaining tags {% endcomment %}
+    {% if sorted_tags.size > 3 %}
+      <details class="more-tags-wrapper">
+        <summary class="more-tags-summary">
+          <span class="more-tags-text">Show {{ sorted_tags.size | minus: 3 }} more tags...</span>
+        </summary>
+        
+        <div class="more-tags-content">
+          {% for i in (3..1000) %}
+            {% if sorted_tags[i] %}
+              {% assign tag_parts = sorted_tags[i] | split: "|" %}
+              {% assign tag = tag_parts[0] %}
+              {% assign count = tag_parts[1] %}
+              <details class="tag-item">
+                <summary>
+                  <span>{{ tag }} <span class="tag-count">({{ count }} post{%- if count > "1" -%}s{%- endif -%})</span></span>
+                </summary>
+         
+                <div class="tag-posts">
+                  <a name="{{ tag | slugify }}"></a>
+                  {% for post in site.tags[tag] %}
+                  <article class="archive-item">
+                    {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+                    <a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a><span class="post-meta"> {{ post.date | date: date_format }}</span>
+                  </article>
+                  {% endfor %}
+                </div>
+              </details>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </details>
+    {% endif %}
+  </div>
 </div>
 
 <hr class="section-break">

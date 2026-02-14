@@ -37,11 +37,11 @@
 .section-break {
   border: none;
   border-top: 1px solid #e1e4e8;
-  margin: 2.5rem 0;
+  margin: 1.5rem 0;
 }
 
 .section-spacing {
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 // Apply section heading styles to specific elements on home page
@@ -62,8 +62,8 @@
 
 // Archive page specific styling
 .archive-section.section-spacing {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   margin-top: 0;
 }
 
@@ -256,4 +256,51 @@
 #iNaturalist table .needs-id-warning {
   color: #d73a49;
   font-weight: 500;
+}
+
+// More tags wrapper styling
+.more-tags-wrapper {
+  margin-top: 12px;
+  border: none;
+  background: none;
+  
+  .more-tags-summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 8px 12px;
+    background-color: #f6f8fa;
+    border: 1px dashed #d0d7de;
+    border-radius: 6px;
+    text-align: center;
+    transition: all 0.2s ease;
+    
+    &::-webkit-details-marker {
+      display: none;
+    }
+    
+    &:hover {
+      background-color: #e7edf3;
+      border-color: #b3b9bf;
+    }
+    
+    .more-tags-text {
+      color: #57606a;
+      font-size: 0.95em;
+      font-weight: 500;
+      
+      &::after {
+        content: ' ▼';
+        font-size: 0.8em;
+        margin-left: 4px;
+      }
+    }
+  }
+  
+  &[open] .more-tags-summary .more-tags-text::after {
+    content: ' ▲';
+  }
+  
+  .more-tags-content {
+    margin-top: 12px;
+  }
 }
