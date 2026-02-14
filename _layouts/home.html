@@ -116,7 +116,23 @@ layout: base
               <p><a href="{{ book.link }}" target="_blank">{{ book.title }}</a></p>
               <p>{{ book.author }}</p>
               <p>Finished {{ book.date_finished }}</p>
-              <p>{{ book.rating }}</p>
+              <p class="book-rating">
+                {% if book.rating contains "5 stars" %}
+                  ★★★★★
+                {% elsif book.rating contains "4 stars" %}
+                  ★★★★☆
+                {% elsif book.rating contains "3 stars" %}
+                  ★★★☆☆
+                {% elsif book.rating contains "2 stars" %}
+                  ★★☆☆☆
+                {% elsif book.rating contains "1 Star" or book.rating contains "1 star" %}
+                  ★☆☆☆☆
+                {% elsif book.rating contains "No rating" %}
+                  <span class="no-rating">No rating</span>
+                {% else %}
+                  {{ book.rating }}
+                {% endif %}
+              </p>
             </td>
             <td><img src="{{ book.img_url }}" alt="{{ book.title }} cover"></td>
           </tr>

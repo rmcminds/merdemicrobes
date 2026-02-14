@@ -33,23 +33,22 @@ permalink: /blog-archive/
 
 <hr class="section-break">
 <div class="archive-section section-spacing">
-  <details>
+  <details open>
     <summary><h2 class="section-heading">Tags</h2></summary>
     
-    <div id="tags" style="margin:5px">
+    <div id="tags" class="tags-container">
       {% assign tags = "" | split:"" %}
       {% for t in site.tags %}
         {% assign tags = tags | push: t[0] %}
       {% endfor %}
       {% assign tags_sorted = tags | sort_natural %}
       {% for tag in tags_sorted %}
-        <div class="archive-group" style="background-color: #e1e4e8; border-radius: 5px; padding: 5px; margin-top: 5px">
-          <div id="#{{ tag | slugify }}"></div>
-          
-          <details>
-            <summary>{{ tag }} ({{site.tags[tag].size}} post{%- if site.tags[tag].size > 1 -%}s{%- endif -%})</summary>
-    
-            <div style="background-color: white; border-radius: 5px; padding-left: 5px">
+        <details class="tag-item">
+          <summary>
+            <span>{{ tag }} <span class="tag-count">({{site.tags[tag].size}} post{%- if site.tags[tag].size > 1 -%}s{%- endif -%})</span></span>
+          </summary>
+   
+          <div class="tag-posts">
             <a name="{{ tag | slugify }}"></a>
             {% for post in site.tags[tag] %}
             <article class="archive-item">
@@ -58,10 +57,8 @@ permalink: /blog-archive/
             </article>
           
             {% endfor %}
-            </div>
-          </details>
-          
-        </div>
+          </div>
+        </details>
       {% endfor %}
     </div>
     
