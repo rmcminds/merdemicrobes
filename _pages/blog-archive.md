@@ -53,9 +53,10 @@ permalink: /blog-archive/
         {% assign tag_parts = sorted_tags[i] | split: "|" %}
         {% assign tag = tag_parts[0] %}
         {% assign count = tag_parts[1] %}
+        {% assign count_num = count | plus: 0 %}
         <details class="tag-item">
           <summary>
-            <span>{{ tag }} <span class="tag-count">({{ count }} post{%- if count > "1" -%}s{%- endif -%})</span></span>
+            <span>{{ tag }} <span class="tag-count">({{ count }} post{%- if count_num > 1 -%}s{%- endif -%})</span></span>
           </summary>
    
           <div class="tag-posts">
@@ -79,14 +80,16 @@ permalink: /blog-archive/
         </summary>
         
         <div class="more-tags-content">
-          {% for i in (3..1000) %}
+          {% assign max_index = sorted_tags.size | minus: 1 %}
+          {% for i in (3..max_index) %}
             {% if sorted_tags[i] %}
               {% assign tag_parts = sorted_tags[i] | split: "|" %}
               {% assign tag = tag_parts[0] %}
               {% assign count = tag_parts[1] %}
+              {% assign count_num = count | plus: 0 %}
               <details class="tag-item">
                 <summary>
-                  <span>{{ tag }} <span class="tag-count">({{ count }} post{%- if count > "1" -%}s{%- endif -%})</span></span>
+                  <span>{{ tag }} <span class="tag-count">({{ count }} post{%- if count_num > 1 -%}s{%- endif -%})</span></span>
                 </summary>
          
                 <div class="tag-posts">
