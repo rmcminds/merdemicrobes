@@ -1,6 +1,60 @@
 // Placeholder to allow defining custom styles that override everything else.
 // (Use `_sass/minima/custom-variables.scss` to override variable defaults)
 
+// Home page section styling
+.home {
+  > h2, #iNaturalist > h2, #Bookwyrm > h2 {
+    font-size: 2em;
+    font-weight: 600;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    color: #1a1a1a;
+    border-bottom: 2px solid #e1e4e8;
+    padding-bottom: 0.5rem;
+    
+    a {
+      text-decoration: none;
+      
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    
+    img {
+      vertical-align: middle;
+      height: 1.2em;
+    }
+  }
+  
+  #iNaturalist > h3, #Bookwyrm > h3 {
+    font-size: 1.4em;
+    font-weight: 500;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #24292e;
+  }
+  
+  .section-break {
+    border: none;
+    border-top: 2px solid #e1e4e8;
+    margin: 2.5rem 0;
+  }
+  
+  .section-spacing {
+    margin-top: 2rem;
+  }
+}
+
+// Post list heading styling
+.post-list-heading {
+  font-size: 2em;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #1a1a1a;
+  border-bottom: 2px solid #e1e4e8;
+  padding-bottom: 0.5rem;
+}
+
 // Scrollable container for tables
 .scrollable-table-container {
   border: 1px solid #e1e4e8;
