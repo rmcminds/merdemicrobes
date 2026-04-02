@@ -30,9 +30,14 @@ base_url = 'https://api.inaturalist.org/v1/taxa'
 # 30 taxa per request
 for i in range(0,len(new_taxa)):
   
-  response = requests.get(base_url, params={'taxon_id': new_taxa[i], 'per_page': 1})
+  response = requests.get(base_url, params={'id': new_taxa[i], 'per_page': 1})
 
-  all_taxa.extend(response.json()['results'])
+  data = response.json()
+  if 'results' not in data:
+    print(f"Warning: unexpected response for taxon {new_taxa[i]}: status={response.status_code}, keys={list(data.keys())}")
+    continue
+
+  all_taxa.extend(data['results'])
   
   # Wait for 1 second before the next request
   time.sleep(1)
