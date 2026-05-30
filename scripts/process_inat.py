@@ -3,8 +3,7 @@ import json
 
 number_keep = 20
 
-obs = pd.read_csv('_data/inat-observations-425614-with-updates.csv')
-obs = obs.dropna(subset=['taxon_id']).copy()
+obs = pd.read_csv('_data/inat-observations-425614-with-updates.csv').dropna(subset=['taxon_id'])
 
 obs = obs.sort_values(by=['time_observed_at'], ascending=False)
 
@@ -24,12 +23,11 @@ obs_unique = obs.drop_duplicates(subset='taxon_id',keep='last').reset_index(drop
 attempted = 0
 saved = 0
 final_obs = pd.DataFrame()
-while True:
-  if attempted >= len(obs_unique.index):
-    break
+total_obs = len(obs_unique.index)
+while attempted < total_obs:
 
   # pull all self- and ancestral- ids for each unique taxon observed before the one being tested
-  all_before = [taxa_dict.get(query, [query]) for query in obs_unique.truncate(before=attempted+1)['taxon_id']]
+  all_before = [taxa_dict.get(query, []) for query in obs_unique.truncate(before=attempted+1)['taxon_id']]
   
   # collapse nested list into a simple list
   all_before = [x for sl in all_before for x in sl]
