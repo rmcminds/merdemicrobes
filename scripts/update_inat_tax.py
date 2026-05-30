@@ -7,7 +7,7 @@ import pandas as pd
 # read in existing database
 obs = pd.read_csv('_data/inat-observations-425614-with-updates.csv')
 
-unique_taxa = obs['taxon_id'].unique()
+unique_taxa = obs['taxon_id'].dropna().unique()
 
 if os.path.isfile('_data/inat_taxonomy.json'):
 
