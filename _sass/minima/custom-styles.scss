@@ -46,10 +46,10 @@
 
 // Custom style for two-column home page
 // Target the layout wrapper safely via parent-chaining
-@media screen and (min-width: 1680px) {
+@media screen and (min-width: 1380px) {
   // Widen Minima's default wrapper only when our custom home layout is active
   .wrapper:has(.homepage-split-layout) {
-    max-width: 1640px; // 800px left + 800px right + 40px gap
+    max-width: 1340px; // 500px left + 800px right + 40px gap
   }
 
   .homepage-split-layout .right-media-column > .section-break {
@@ -63,12 +63,15 @@
   flex-direction: column; // Stack vertically on mobile and tablets
   gap: 40px;
 
-  @media screen and (min-width: 1680px) {
+  @media screen and (min-width: 1380px) {
     flex-direction: row; // Snap side-by-side only on massive screens
-    
-    .split-column {
-      flex: 0 1 800px; // Lock each column to a max base of 800px
-      width: 800px;
+
+    .left-text-column {
+      flex: 0 0 500px; 
+    }
+
+    .right-media-column {
+      flex: 1; 
     }
 
   }
