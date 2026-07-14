@@ -44,6 +44,36 @@
   margin-top: 1rem;
 }
 
+// Custom style for two-column home page
+// Target the layout wrapper safely via parent-chaining
+@media screen and (min-width: 1680px) {
+  // Widen Minima's default wrapper only when our custom home layout is active
+  .wrapper:has(.homepage-split-layout) {
+    max-width: 1640px; // 800px left + 800px right + 40px gap
+  }
+
+  .homepage-split-layout .right-media-column > .section-break {
+    display: none; 
+  }
+}
+
+// Layout behavior rules
+.homepage-split-layout {
+  display: flex;
+  flex-direction: column; // Stack vertically on mobile and tablets
+  gap: 40px;
+
+  @media screen and (min-width: 1680px) {
+    flex-direction: row; // Snap side-by-side only on massive screens
+    
+    .split-column {
+      flex: 0 1 800px; // Lock each column to a max base of 800px
+      width: 800px;
+    }
+
+  }
+}
+
 // Apply section heading styles to specific elements on home page
 .home {
   > h2, #iNaturalist > h2, #Bookwyrm > h2 {

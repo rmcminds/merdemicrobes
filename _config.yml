@@ -31,7 +31,8 @@ disqus:
   shortname: merdemicrobes
   
 # Build settings
-#theme: minima
+# specific commit is a version of minima v3; latest release was 2.5.2 so this has no specific version number
+# not all assets need to be copied to this directory unless we are modifying or adding to the defaults
 remote_theme: jekyll/minima@5ce4006d175e6e5278bb63a0aad1a85e3bf2370b
 
 plugins:
@@ -61,14 +62,6 @@ minima:
     - title: mastodon
       icon: mastodon
       url: "https://mastodon.social/@rmcminds"
-
-mastodon:
-- username: rmcminds
-  instance: mastodon.social
-
-
-
-
 
   
 # Exclude from processing.
