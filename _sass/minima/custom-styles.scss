@@ -66,12 +66,12 @@
   @media screen and (min-width: 1380px) {
     flex-direction: row; // Snap side-by-side only on massive screens
 
-    .split-column .left-text-column {
+    .left-text-column {
       flex: 0 0 500px;
       width: 500px;
     }
 
-    .split-column .right-media-column {
+    .right-media-column {
       flex: 1; 
     }
 
