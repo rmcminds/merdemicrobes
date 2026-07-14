@@ -5,7 +5,7 @@
     {%- assign page_paths = site.header_pages | default: default_paths -%}
     {%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}
     <a class="site-title" rel="author" href="{{ "/" | relative_url }}">
-      <img src="assets/favicon.png" alt="" style="vertical-align: bottom; height: 1.2em; width: auto;"> 
+      <img src="assets/favicon.png" alt="" style="vertical-align: text-bottom; height: 1.2em; width: auto;"> 
       <script type="text/javascript">
         var titles = new Array("Mer de Microbes", "Merde! Microbes!");
         document.write(titles[Math.floor(Math.random() * titles.length)]);

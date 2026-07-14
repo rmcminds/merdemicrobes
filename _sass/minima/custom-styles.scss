@@ -67,7 +67,8 @@
     flex-direction: row; // Snap side-by-side only on massive screens
 
     .split-column .left-text-column {
-      flex: 0 0 500px; 
+      flex: 0 0 500px;
+      width: 500px;
     }
 
     .split-column .right-media-column {
