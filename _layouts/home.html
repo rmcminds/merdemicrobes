@@ -70,23 +70,12 @@ layout: base
       <hr class="section-break">
       
       <div id="iNaturalist">
-        <h3>Ryan's most recent taxonomic discoveries on <a href="https://www.inaturalist.org/people/rmcminds" target="_blank">
-          <img alt="iNaturalist" src="https://raw.githubusercontent.com/inaturalist/inaturalist/main/app/assets/images/logo-small.png" style="vertical-align: 2px; height: 0.8em;"/>
-        </a></h3>
-        <p><small>(observations of taxa that he'd never before uploaded)</small></p>
-
+        <h3>Recent <a href="https://www.inaturalist.org/people/rmcminds" target="_blank">
+          <img alt="iNaturalist" src="https://raw.githubusercontent.com/inaturalist/inaturalist/main/app/assets/images/logo-small.png" style="vertical-align: 1px; height: 0.8em;"/>
+        </a> discoveries</h3>
         <div class="scrollable-table-container">
           <table>
             {% for row in site.data.most_recent_new_taxa limit: 20 %}
-              <!-- don't need the header for now. will ultimately want to reformat this to use CSS grid instead of table.
-              {% if forloop.first %}
-                <tr>
-                  <th>Taxon</th>
-                  <th>Photo</th>
-                </tr>
-              {% endif %}
-              -->
-              
               <tr>
                 <td>
                   <p><i><a href="{{ row["url"] }}" target="_blank">{{ row["scientific_name"] }}</a></i></p>
@@ -102,14 +91,12 @@ layout: base
         </div>
       </div>
       
-      
       <!-- Add a break and then a section with book data from bookwyrm.social -->
       <hr class="section-break">
       
       <div id="Bookwyrm">
-        <h2><a href="https://bookwyrm.social/user/rmcminds" target="_blank">Bookwyrm.social</a></h2>
         <h3>
-          Ryan recently <a href="https://bookwyrm.social/user/rmcminds/books/read?sort=-finish_date" target="_blank">finished reading</a>:
+          Books I recently <a href="https://bookwyrm.social/user/rmcminds/books/read?sort=-finish_date" target="_blank">finished reading</a>:
         </h3>
         <div class="scrollable-table-container">
           <table id="read-books-table">
@@ -144,7 +131,7 @@ layout: base
         </div>
         <div class="section-spacing"></div>
         <h3>
-          ...and is <a href="https://bookwyrm.social/user/rmcminds/books/reading?sort=-start_date" target="_blank">currently reading</a>:
+          ...and some that I'm <a href="https://bookwyrm.social/user/rmcminds/books/reading?sort=-start_date" target="_blank">currently reading</a>:
         </h3>
         <div class="scrollable-table-container">
           <table id="reading-books-table">
